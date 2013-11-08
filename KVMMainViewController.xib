@@ -8,7 +8,8 @@
             <connections>
                 <outlet property="arrowView" destination="cl2-UY-HGg" id="ka2-4J-Vgj"/>
                 <outlet property="layerControl" destination="dm1-Kd-p6F" id="qfW-HF-Zs7"/>
-                <outlet property="panRecognizer" destination="fau-Kc-2gu" id="CSn-Eu-IWK"/>
+                <outlet property="panRecognizer" destination="dSI-V6-Ex7" id="fvD-DY-Uy6"/>
+                <outlet property="switchBoardView" destination="x0z-Qw-kab" id="UyG-63-xYY"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -20,6 +21,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="cl2-UY-HGg">
                     <rect key="frame" x="60" y="409" width="200" height="40"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <gestureRecognizers/>
                 </imageView>
                 <segmentedControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="dm1-Kd-p6F">
                     <rect key="frame" x="60" y="38" width="200" height="29"/>
@@ -29,19 +31,24 @@
                         <segment title=""/>
                     </segments>
                 </segmentedControl>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x0z-Qw-kab">
+                    <rect key="frame" x="29" y="109" width="262" height="262"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <gestureRecognizers/>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <outletCollection property="gestureRecognizers" destination="fau-Kc-2gu" appends="YES" id="QKi-Fw-bzK"/>
+                <outletCollection property="gestureRecognizers" destination="dSI-V6-Ex7" appends="YES" id="Odr-ue-g2F"/>
             </connections>
         </view>
-        <panGestureRecognizer minimumNumberOfTouches="1" id="fau-Kc-2gu">
+        <panGestureRecognizer minimumNumberOfTouches="1" id="dSI-V6-Ex7">
             <connections>
-                <action selector="didPanLayer:" destination="-1" id="Von-sF-kdP"/>
-                <outlet property="delegate" destination="-1" id="2gp-Tw-V41"/>
+                <action selector="didPan:" destination="-1" id="D7I-Ug-9aR"/>
+                <outlet property="delegate" destination="-1" id="txq-mu-EMR"/>
             </connections>
         </panGestureRecognizer>
     </objects>

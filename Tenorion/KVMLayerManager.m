@@ -16,37 +16,52 @@
     if (self)
     {
         self.layerSize = layerSize;
-        self.colors = colors;
+        self.colorsStack = colors;
         [self setupLayers];
-        [self setupLayerTabControl];
     }
     return self;
 }
 
 - (void)setupLayers
 {
-    self.maxLayers = 2;
+    self.maxLayers = 3;
     self.currLayerIndex = -1;
     self.currColumnIndex = 0;
     self.layers = [[NSMutableArray alloc] init];
 }
 
-- (void)setupLayerTabControl
-{
-    self.layerControl = [[UISegmentedControl alloc] initWithItems:self.layers];
-    self.layerControl.frame = CGRectMake(30, 30, 260, 30);
-    self.layerControl.userInteractionEnabled = NO;
-    self.layerControl.tintColor = [self.colors firstObject];
-}
-
 - (KVMLayer *)addLayer
 {
-    int colorIndex = self.currLayerIndex % [self.colors count];
-    KVMLayer* layer = [[KVMLayer alloc] initWithFrame:CGRectMake(0, 0, 290, 380) AndColumns:self.layerSize AndColor:[self.colors objectAtIndex:colorIndex]];
+    KVMLayer* layer = [[KVMLayer alloc] initWithFrame:CGRectMake(0, 0, 290, 380) AndColumns:self.layerSize AndColor:[self.colorsStack lastObject]];
+    [self.colorsStack removeLastObject];
     [self.layers addObject:layer];
     self.currLayerIndex++;
     
     return layer;
+}
+
+- (void)deleteLayerAtIndex:(int)index IsLastLayer:(BOOL)isLastLayer
+{
+    KVMLayer* layerToDelete = [self.layers objectAtIndex:index];
+    [self.colorsStack addObject:[layerToDelete getColor]];
+    [layerToDelete removeFromSuperview];
+    [self.layers removeObjectAtIndex:index];
+    
+    if (isLastLayer)
+    {
+        self.currLayerIndex = index - 1;
+    }
+    else
+    {
+        NSMutableArray* tempLayers = [[NSMutableArray alloc] init];
+        for (KVMLayer* layer in self.layers)
+        {
+            [tempLayers addObject:layer];
+        }
+    
+        self.layers = tempLayers;
+        self.currLayerIndex = index;
+    }
 }
 
 - (BOOL)canAddLayer
@@ -72,16 +87,17 @@
 - (KVMLayer *)getNextLayer
 {
     self.currLayerIndex++;
-    self.layerControl.selectedSegmentIndex = self.currLayerIndex;
-    self.layerControl.tintColor = [self.colors objectAtIndex:self.currLayerIndex];
     return [self.layers objectAtIndex:self.currLayerIndex];
 }
 
 - (KVMLayer *)getPreviousLayer
 {
     self.currLayerIndex--;
-    self.layerControl.selectedSegmentIndex = self.currLayerIndex;
-    self.layerControl.tintColor = [self.colors objectAtIndex:self.currLayerIndex];
+    return [self.layers objectAtIndex:self.currLayerIndex];
+}
+
+- (KVMLayer *)getCurrentLayer
+{
     return [self.layers objectAtIndex:self.currLayerIndex];
 }
 

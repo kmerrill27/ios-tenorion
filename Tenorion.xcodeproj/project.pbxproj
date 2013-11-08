@@ -29,6 +29,8 @@
 		17CA69CC182C3AC500D85596 /* KVMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA69CB182C3AC500D85596 /* KVMPlayer.m */; };
 		17CA69CF182C3B5600D85596 /* KVMLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA69CE182C3B5600D85596 /* KVMLayerManager.m */; };
 		17CA69DD182CA4A500D85596 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CA69DC182CA4A500D85596 /* arrow.png */; };
+		17CA69E1182CBD1900D85596 /* KVMOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */; };
+		17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,9 @@
 		17CA69CD182C3B5600D85596 /* KVMLayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMLayerManager.h; sourceTree = "<group>"; };
 		17CA69CE182C3B5600D85596 /* KVMLayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMLayerManager.m; sourceTree = "<group>"; };
 		17CA69DC182CA4A500D85596 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		17CA69DE182CBD1900D85596 /* KVMOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMOptionsViewController.h; sourceTree = "<group>"; };
+		17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMOptionsViewController.m; sourceTree = "<group>"; };
+		17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVMOptionsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +159,9 @@
 				17CA69CB182C3AC500D85596 /* KVMPlayer.m */,
 				17CA69CD182C3B5600D85596 /* KVMLayerManager.h */,
 				17CA69CE182C3B5600D85596 /* KVMLayerManager.m */,
+				17CA69DE182CBD1900D85596 /* KVMOptionsViewController.h */,
+				17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */,
+				17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */,
 			);
 			path = Tenorion;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 				17B449B818260EE2002D31C6 /* KVMMainViewController.xib in Resources */,
 				17B4499018260E4E002D31C6 /* InfoPlist.strings in Resources */,
 				17CA69DD182CA4A500D85596 /* arrow.png in Resources */,
+				17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */,
 				17B4499818260E4E002D31C6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,6 +300,7 @@
 			files = (
 				178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */,
 				17CA69CC182C3AC500D85596 /* KVMPlayer.m in Sources */,
+				17CA69E1182CBD1900D85596 /* KVMOptionsViewController.m in Sources */,
 				17CA69CF182C3B5600D85596 /* KVMLayerManager.m in Sources */,
 				178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */,
 				17B4499218260E4E002D31C6 /* main.m in Sources */,
