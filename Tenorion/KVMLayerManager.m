@@ -24,7 +24,7 @@
 
 - (void)setupLayers
 {
-    self.maxLayers = 3;
+    self.maxLayers = [self.colorsStack count];
     self.currLayerIndex = -1;
     self.currColumnIndex = 0;
     self.layers = [[NSMutableArray alloc] init];

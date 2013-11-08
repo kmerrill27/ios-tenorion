@@ -18,7 +18,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.layerColors = [[NSMutableArray alloc] initWithObjects:[UIColor yellowColor], [UIColor whiteColor], [UIColor magentaColor], nil];
+        self.layerColors = [[NSMutableArray alloc] initWithObjects:[UIColor cyanColor],[UIColor yellowColor], [UIColor magentaColor], [UIColor whiteColor], nil];
         self.layerManager = [[KVMLayerManager alloc] initWithColumns:12 AndColors:self.layerColors];
         self.player = [[KVMPlayer alloc] initWithLayerManager:self.layerManager];
     }
