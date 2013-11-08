@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KVMMainViewController.h"
 
 @interface KVMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) KVMMainViewController *mainViewController;
 
 @end

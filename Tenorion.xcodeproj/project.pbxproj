@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341B7182ABD4700ADF751 /* KVMSwitch.m */; };
+		178341C0182AE38A00ADF751 /* KVMTone.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341BF182AE38A00ADF751 /* KVMTone.m */; };
+		178341C1182AE39300ADF751 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178341BC182AE33000ADF751 /* AudioToolbox.framework */; };
+		178341C3182B382D00ADF751 /* 3C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178341C2182B382D00ADF751 /* 3C.wav */; };
+		178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341C5182B4CBF00ADF751 /* KVMLayer.m */; };
 		17B4498618260E4E002D31C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498518260E4E002D31C6 /* Foundation.framework */; };
 		17B4498818260E4E002D31C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498718260E4E002D31C6 /* CoreGraphics.framework */; };
 		17B4498A18260E4E002D31C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498918260E4E002D31C6 /* UIKit.framework */; };
@@ -19,6 +24,11 @@
 		17B449A118260E4E002D31C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498918260E4E002D31C6 /* UIKit.framework */; };
 		17B449A918260E4E002D31C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 17B449A718260E4E002D31C6 /* InfoPlist.strings */; };
 		17B449AB18260E4E002D31C6 /* TenorionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B449AA18260E4E002D31C6 /* TenorionTests.m */; };
+		17B449B718260EE2002D31C6 /* KVMMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B449B518260EE2002D31C6 /* KVMMainViewController.m */; };
+		17B449B818260EE2002D31C6 /* KVMMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B449B618260EE2002D31C6 /* KVMMainViewController.xib */; };
+		17CA69CC182C3AC500D85596 /* KVMPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA69CB182C3AC500D85596 /* KVMPlayer.m */; };
+		17CA69CF182C3B5600D85596 /* KVMLayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA69CE182C3B5600D85596 /* KVMLayerManager.m */; };
+		17CA69DD182CA4A500D85596 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CA69DC182CA4A500D85596 /* arrow.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +42,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		178341B6182ABD4700ADF751 /* KVMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMSwitch.h; sourceTree = "<group>"; };
+		178341B7182ABD4700ADF751 /* KVMSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMSwitch.m; sourceTree = "<group>"; };
+		178341BC182AE33000ADF751 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		178341BE182AE38A00ADF751 /* KVMTone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMTone.h; sourceTree = "<group>"; };
+		178341BF182AE38A00ADF751 /* KVMTone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMTone.m; sourceTree = "<group>"; };
+		178341C2182B382D00ADF751 /* 3C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3C.wav; sourceTree = "<group>"; };
+		178341C4182B4CBF00ADF751 /* KVMLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMLayer.h; sourceTree = "<group>"; };
+		178341C5182B4CBF00ADF751 /* KVMLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMLayer.m; sourceTree = "<group>"; };
 		17B4498218260E4E002D31C6 /* Tenorion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenorion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B4498518260E4E002D31C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B4498718260E4E002D31C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +66,14 @@
 		17B449A618260E4E002D31C6 /* TenorionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TenorionTests-Info.plist"; sourceTree = "<group>"; };
 		17B449A818260E4E002D31C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17B449AA18260E4E002D31C6 /* TenorionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TenorionTests.m; sourceTree = "<group>"; };
+		17B449B418260EE2002D31C6 /* KVMMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KVMMainViewController.h; path = ../KVMMainViewController.h; sourceTree = "<group>"; };
+		17B449B518260EE2002D31C6 /* KVMMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KVMMainViewController.m; path = ../KVMMainViewController.m; sourceTree = "<group>"; };
+		17B449B618260EE2002D31C6 /* KVMMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = KVMMainViewController.xib; path = ../KVMMainViewController.xib; sourceTree = "<group>"; };
+		17CA69CA182C3AC500D85596 /* KVMPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMPlayer.h; sourceTree = "<group>"; };
+		17CA69CB182C3AC500D85596 /* KVMPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMPlayer.m; sourceTree = "<group>"; };
+		17CA69CD182C3B5600D85596 /* KVMLayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMLayerManager.h; sourceTree = "<group>"; };
+		17CA69CE182C3B5600D85596 /* KVMLayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMLayerManager.m; sourceTree = "<group>"; };
+		17CA69DC182CA4A500D85596 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178341C1182AE39300ADF751 /* AudioToolbox.framework in Frameworks */,
 				17B4498818260E4E002D31C6 /* CoreGraphics.framework in Frameworks */,
 				17B4498A18260E4E002D31C6 /* UIKit.framework in Frameworks */,
 				17B4498618260E4E002D31C6 /* Foundation.framework in Frameworks */,
@@ -96,6 +123,7 @@
 		17B4498418260E4E002D31C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				178341BC182AE33000ADF751 /* AudioToolbox.framework */,
 				17B4498518260E4E002D31C6 /* Foundation.framework */,
 				17B4498718260E4E002D31C6 /* CoreGraphics.framework */,
 				17B4498918260E4E002D31C6 /* UIKit.framework */,
@@ -107,10 +135,25 @@
 		17B4498B18260E4E002D31C6 /* Tenorion */ = {
 			isa = PBXGroup;
 			children = (
+				17CA69DC182CA4A500D85596 /* arrow.png */,
+				178341C2182B382D00ADF751 /* 3C.wav */,
+				178341BE182AE38A00ADF751 /* KVMTone.h */,
+				178341BF182AE38A00ADF751 /* KVMTone.m */,
+				17B449B418260EE2002D31C6 /* KVMMainViewController.h */,
+				17B449B518260EE2002D31C6 /* KVMMainViewController.m */,
+				17B449B618260EE2002D31C6 /* KVMMainViewController.xib */,
 				17B4499418260E4E002D31C6 /* KVMAppDelegate.h */,
 				17B4499518260E4E002D31C6 /* KVMAppDelegate.m */,
 				17B4499718260E4E002D31C6 /* Images.xcassets */,
 				17B4498C18260E4E002D31C6 /* Supporting Files */,
+				178341B6182ABD4700ADF751 /* KVMSwitch.h */,
+				178341B7182ABD4700ADF751 /* KVMSwitch.m */,
+				178341C4182B4CBF00ADF751 /* KVMLayer.h */,
+				178341C5182B4CBF00ADF751 /* KVMLayer.m */,
+				17CA69CA182C3AC500D85596 /* KVMPlayer.h */,
+				17CA69CB182C3AC500D85596 /* KVMPlayer.m */,
+				17CA69CD182C3B5600D85596 /* KVMLayerManager.h */,
+				17CA69CE182C3B5600D85596 /* KVMLayerManager.m */,
 			);
 			path = Tenorion;
 			sourceTree = "<group>";
@@ -192,6 +235,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = kmerrill27;
 				TargetAttributes = {
+					17B4498118260E4E002D31C6 = {
+						DevelopmentTeam = 422M5JWED5;
+					};
 					17B4499C18260E4E002D31C6 = {
 						TestTargetID = 17B4498118260E4E002D31C6;
 					};
@@ -220,7 +266,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178341C3182B382D00ADF751 /* 3C.wav in Resources */,
+				17B449B818260EE2002D31C6 /* KVMMainViewController.xib in Resources */,
 				17B4499018260E4E002D31C6 /* InfoPlist.strings in Resources */,
+				17CA69DD182CA4A500D85596 /* arrow.png in Resources */,
 				17B4499818260E4E002D31C6 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */,
+				17CA69CC182C3AC500D85596 /* KVMPlayer.m in Sources */,
+				17CA69CF182C3B5600D85596 /* KVMLayerManager.m in Sources */,
+				178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */,
 				17B4499218260E4E002D31C6 /* main.m in Sources */,
 				17B4499618260E4E002D31C6 /* KVMAppDelegate.m in Sources */,
+				178341C0182AE38A00ADF751 /* KVMTone.m in Sources */,
+				17B449B718260EE2002D31C6 /* KVMMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,10 +415,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tenorion/Tenorion-Prefix.pch";
 				INFOPLIST_FILE = "Tenorion/Tenorion-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -373,10 +431,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tenorion/Tenorion-Prefix.pch";
 				INFOPLIST_FILE = "Tenorion/Tenorion-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -442,6 +503,7 @@
 				17B449B018260E4E002D31C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17B449B118260E4E002D31C6 /* Build configuration list for PBXNativeTarget "TenorionTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +512,7 @@
 				17B449B318260E4E002D31C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
