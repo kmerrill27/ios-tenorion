@@ -20,15 +20,15 @@
 
 - (id)initWithColumns:(int)layerSize AndColors:(NSMutableArray *)colors;
 - (BOOL)canAddLayer;
-- (KVMLayer *)addLayer;
-- (void)deleteLayerAtIndex:(int)index IsLastLayer:(BOOL)isLastLayer;
 - (BOOL)hasNextLayer;
 - (BOOL)hasPreviousLayer;
 - (BOOL)hasNextColumn;
+- (void)resetColumns;
+- (void)deleteLayerAtIndex:(int)index IsLastLayer:(BOOL)isLastLayer;
+- (KVMLayer *)addLayer;
 - (KVMLayer *)getNextLayer;
 - (KVMLayer *)getPreviousLayer;
 - (KVMLayer *)getCurrentLayer;
 - (NSMutableArray *)getNextColumn;
-- (void)resetColumns;
 
 @end

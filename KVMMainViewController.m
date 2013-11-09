@@ -18,11 +18,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.layerColors = [[NSMutableArray alloc] initWithObjects:[UIColor cyanColor],[UIColor yellowColor], [UIColor magentaColor], [UIColor whiteColor], nil];
-        self.layerManager = [[KVMLayerManager alloc] initWithColumns:12 AndColors:self.layerColors];
-        self.player = [[KVMPlayer alloc] initWithLayerManager:self.layerManager];
+        [self setup];
     }
     return self;
+}
+
+- (void)setup
+{
+    self.layerColors = [[NSMutableArray alloc] initWithObjects:[UIColor cyanColor],[UIColor yellowColor], [UIColor magentaColor], [UIColor whiteColor], nil];
+    self.layerManager = [[KVMLayerManager alloc] initWithColumns:8 AndColors:self.layerColors];
+    self.player = [[KVMPlayer alloc] initWithLayerManager:self.layerManager];
 }
 
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer
@@ -106,7 +111,7 @@
     self.layerControl.selectedSegmentIndex = numLayers;
 }
 
-- (void)deleteLayer
+- (void)deleteCurrentLayer
 {
     int layerToDelete = self.layerControl.selectedSegmentIndex;
     BOOL isLastLayer = layerToDelete == [self.layerControl numberOfSegments] - 1;
@@ -114,34 +119,45 @@
     
     if (isLastLayer)
     {
-        [self.layerControl removeSegmentAtIndex:layerToDelete animated:YES];
-        if ([self.layerControl numberOfSegments] == 0)
-        {
-            [self addNewLayer];
-        }
-        else
-        {
-            self.layerControl.selectedSegmentIndex = layerToDelete-1;
-        }
+        [self deleteLastLayer:layerToDelete];
     }
     else
     {
-        int currIndex = 0;
-        for (int i = 0; i < [self.layerControl numberOfSegments]; i++)
-        {
-            if (i != layerToDelete)
-            {
-                [self.layerControl removeSegmentAtIndex:currIndex animated:NO];
-                [self.layerControl insertSegmentWithTitle:@"" atIndex:currIndex animated:NO];
-                currIndex++;
-            }
-        }
-        
-        [self.layerControl removeSegmentAtIndex:[self.layerControl numberOfSegments]-1 animated:NO];
-        self.layerControl.selectedSegmentIndex = layerToDelete;
+        [self deleteInBetweenLayer:layerToDelete];
     }
     
     [self tintElements:[[self.layerManager getCurrentLayer] getColor]];
+}
+
+- (void)deleteInBetweenLayer:(int)layerToDelete
+{
+    int currIndex = 0;
+    int numSegments = [self.layerControl numberOfSegments];
+    for (int i = 0; i < numSegments; i++)
+    {
+        if (i != layerToDelete)
+        {
+            [self.layerControl removeSegmentAtIndex:currIndex animated:NO];
+            [self.layerControl insertSegmentWithTitle:@"" atIndex:currIndex animated:NO];
+            currIndex++;
+        }
+    }
+    
+    [self.layerControl removeSegmentAtIndex:numSegments-1 animated:NO];
+    self.layerControl.selectedSegmentIndex = layerToDelete;
+}
+
+- (void)deleteLastLayer:(int)layerToDelete
+{
+    [self.layerControl removeSegmentAtIndex:layerToDelete animated:YES];
+    if ([self.layerControl numberOfSegments] == 0)
+    {
+        [self addNewLayer];
+    }
+    else
+    {
+        self.layerControl.selectedSegmentIndex = layerToDelete-1;
+    }
 }
 
 - (void)tintElements:(UIColor *)color
@@ -152,31 +168,10 @@
     self.arrowView.tintColor = color;
 }
 
-- (void)viewDidLoad
+- (void)presentOptionsViewController
 {
-    [super viewDidLoad];
-    
-    [self.layerControl removeAllSegments];
-    KVMLayer* layer = [self.layerManager addLayer];
-    [self.switchBoardView addSubview:layer];
-    
-    [self.layerControl insertSegmentWithTitle:@"" atIndex:0 animated:YES];
-    self.layerControl.selectedSegmentIndex = 0;
-    
-    [self tintElements:[layer getColor]];
-    
-    [self.player startPlayback];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)presentOptionsViewController
-{
-    self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:[self.arrowView tintColor]AndTarget:self AndAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteLayer)];
+    self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:[self.arrowView tintColor]AndTarget:self];
+    [self.optionsController setDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteCurrentLayer)];
     
     CGRect mainrect = self.view.bounds;
     CGRect newRect = CGRectMake(0, mainrect.size.height, mainrect.size.width, mainrect.size.height);
@@ -189,7 +184,7 @@
     } completion:nil];
 }
 
--(void)dismissOptionsController
+- (void)dismissOptionsController
 {
     CGRect mainrect = self.view.bounds;
     CGRect newRect = CGRectMake(0, mainrect.size.height, mainrect.size.width, 0);
@@ -201,6 +196,21 @@
         self.optionsController = nil;
         [self.panRecognizer setEnabled:YES];
     }];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self.layerControl removeAllSegments];
+    [self addNewLayer];
+    [self.player startPlayback];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 @end

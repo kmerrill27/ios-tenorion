@@ -13,13 +13,19 @@
 @property id target;
 @property SEL dismissAction;
 @property SEL deleteAction;
-@property UIColor* themeColor;
 @property BOOL isBeingDismissed;
-@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer* panRecognizer;
-@property (strong, nonatomic) IBOutlet UIButton* deleteButton;
+@property UIColor* themeColor;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target AndAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
+@property (strong, nonatomic) IBOutlet UIPanGestureRecognizer* panRecognizer;
+@property (strong, nonatomic) IBOutlet UISlider* volumeSlider;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target;
+- (void)setDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer;
+- (IBAction)didChangeVolume:(UISlider *)sender;
+- (IBAction)didChangeInstrument:(UISegmentedControl *)sender;
+- (IBAction)didChangeScale:(UISegmentedControl *)sender;
+- (IBAction)didChangeFrequency:(UISegmentedControl *)sender;
 - (IBAction)didPressDelete:(UIButton *)sender;
 
 @end

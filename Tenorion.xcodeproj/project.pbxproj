@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1773ED07182DA248009847EA /* drum.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED03182DA248009847EA /* drum.png */; };
+		1773ED08182DA248009847EA /* guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED04182DA248009847EA /* guitar.png */; };
+		1773ED09182DA248009847EA /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED05182DA248009847EA /* microphone.png */; };
+		1773ED0A182DA248009847EA /* piano.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED06182DA248009847EA /* piano.png */; };
+		1773ED0C182DA858009847EA /* treble.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED0B182DA858009847EA /* treble.png */; };
+		1773ED0E182DA86F009847EA /* bass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED0D182DA86F009847EA /* bass.png */; };
 		178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341B7182ABD4700ADF751 /* KVMSwitch.m */; };
 		178341C0182AE38A00ADF751 /* KVMTone.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341BF182AE38A00ADF751 /* KVMTone.m */; };
 		178341C1182AE39300ADF751 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178341BC182AE33000ADF751 /* AudioToolbox.framework */; };
@@ -44,6 +50,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1773ED03182DA248009847EA /* drum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drum.png; sourceTree = "<group>"; };
+		1773ED04182DA248009847EA /* guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar.png; sourceTree = "<group>"; };
+		1773ED05182DA248009847EA /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
+		1773ED06182DA248009847EA /* piano.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piano.png; sourceTree = "<group>"; };
+		1773ED0B182DA858009847EA /* treble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = treble.png; sourceTree = "<group>"; };
+		1773ED0D182DA86F009847EA /* bass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bass.png; sourceTree = "<group>"; };
 		178341B6182ABD4700ADF751 /* KVMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMSwitch.h; sourceTree = "<group>"; };
 		178341B7182ABD4700ADF751 /* KVMSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMSwitch.m; sourceTree = "<group>"; };
 		178341BC182AE33000ADF751 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -140,6 +152,12 @@
 		17B4498B18260E4E002D31C6 /* Tenorion */ = {
 			isa = PBXGroup;
 			children = (
+				1773ED0D182DA86F009847EA /* bass.png */,
+				1773ED0B182DA858009847EA /* treble.png */,
+				1773ED03182DA248009847EA /* drum.png */,
+				1773ED04182DA248009847EA /* guitar.png */,
+				1773ED05182DA248009847EA /* microphone.png */,
+				1773ED06182DA248009847EA /* piano.png */,
 				17CA69DC182CA4A500D85596 /* arrow.png */,
 				178341C2182B382D00ADF751 /* 3C.wav */,
 				178341BE182AE38A00ADF751 /* KVMTone.h */,
@@ -275,11 +293,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				178341C3182B382D00ADF751 /* 3C.wav in Resources */,
+				1773ED08182DA248009847EA /* guitar.png in Resources */,
 				17B449B818260EE2002D31C6 /* KVMMainViewController.xib in Resources */,
+				1773ED09182DA248009847EA /* microphone.png in Resources */,
 				17B4499018260E4E002D31C6 /* InfoPlist.strings in Resources */,
 				17CA69DD182CA4A500D85596 /* arrow.png in Resources */,
 				17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */,
+				1773ED0A182DA248009847EA /* piano.png in Resources */,
+				1773ED0E182DA86F009847EA /* bass.png in Resources */,
+				1773ED0C182DA858009847EA /* treble.png in Resources */,
 				17B4499818260E4E002D31C6 /* Images.xcassets in Resources */,
+				1773ED07182DA248009847EA /* drum.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

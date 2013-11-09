@@ -14,17 +14,21 @@
 
 @implementation KVMOptionsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target AndAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction
+- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
         self.themeColor = color;
         self.target = target;
-        self.dismissAction = dismissAction;
-        self.deleteAction = deleteAction;
         self.isBeingDismissed = NO;
     }
     return self;
+}
+
+- (void)setDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction
+{
+    self.dismissAction = dismissAction;
+    self.deleteAction = deleteAction;
 }
 
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer
@@ -46,11 +50,31 @@
     [self.target performSelector:self.dismissAction withObject:nil afterDelay:0.0];
 }
 
+- (IBAction)didChangeVolume:(UISlider *)sender
+{
+    
+}
+
+- (IBAction)didChangeInstrument:(UISegmentedControl *)sender
+{
+    
+}
+
+- (IBAction)didChangeScale:(UISegmentedControl *)sender
+{
+    
+}
+
+- (IBAction)didChangeFrequency:(UISegmentedControl *)sender
+{
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [self.deleteButton setTitleColor:self.themeColor forState:UIControlStateNormal];
+    self.volumeSlider.minimumTrackTintColor = self.themeColor;
 }
 
 - (void)didReceiveMemoryWarning

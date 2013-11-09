@@ -57,16 +57,4 @@
     }
 }
 
-- (void)setHighlighted:(BOOL)highlighted
-{
-    if (highlighted)
-    {
-        //self.backgroundColor = [UIColor lightGrayColor];
-    }
-    else
-    {
-        //self.backgroundColor = [UIColor blueColor];
-    }
-}
-
 @end

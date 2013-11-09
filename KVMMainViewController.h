@@ -24,6 +24,5 @@
 @property (strong, nonatomic) IBOutlet UIPanGestureRecognizer* panRecognizer;
 
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer;
-- (void)deleteLayer;
 
 @end

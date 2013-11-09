@@ -18,7 +18,6 @@
         self.size = size;
         self.switchColor = color;
         self.opaque = NO;
-        self.switches = [[NSMutableArray alloc] init];
         [self drawSwitches];
     }
     return self;
@@ -41,13 +40,15 @@
 
 - (void)drawSwitches
 {
-    int switchSize = 20;
+    int switchSize = 30;
+    self.switches = [[NSMutableArray alloc] init];
 
     for(int row = 0; row < self.size; row++) {
         NSMutableArray* switchColumn = [[NSMutableArray alloc] init];
         [self.switches addObject:switchColumn];
+        
         for(int col = 0; col < self.size; col++) {
-            KVMSwitch* tempSwitch = [[KVMSwitch alloc] initWithFrame:CGRectMake(row * (switchSize+2), col * (switchSize+2), switchSize, switchSize) WithTone:@"3C.wav" AndColor:self.switchColor];
+            KVMSwitch* tempSwitch = [[KVMSwitch alloc] initWithFrame:CGRectMake(row * (switchSize+3), col * (switchSize+3), switchSize, switchSize) WithTone:@"3C.wav" AndColor:self.switchColor];
             [tempSwitch addTarget:self action:@selector(didPressSwitch:) forControlEvents:UIControlEventTouchUpInside];
             [switchColumn addObject:tempSwitch];
             [self addSubview:tempSwitch];
