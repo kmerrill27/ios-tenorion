@@ -10,13 +10,14 @@
 
 @implementation KVMLayerManager
 
-- (id)initWithColumns:(int)layerSize AndColors:(NSMutableArray *)colors
+- (id)initWithColumns:(int)layerSize AndColors:(NSMutableArray *)colors AndTarget:(id)target
 {
     self = [super init];
     if (self)
     {
         self.layerSize = layerSize;
         self.colorsStack = colors;
+        self.target = target;
         [self setupLayers];
     }
     return self;
@@ -32,7 +33,7 @@
 
 - (KVMLayer *)addLayer
 {
-    KVMLayer* layer = [[KVMLayer alloc] initWithFrame:CGRectMake(0, 0, 290, 380) AndColumns:self.layerSize AndColor:[self.colorsStack lastObject]];
+    KVMLayer* layer = [[KVMLayer alloc] initWithFrame:CGRectMake(0, 0, 290, 380) AndColumns:self.layerSize AndColor:[self.colorsStack lastObject] AndTarget:self.target];
     [self.colorsStack removeLastObject];
     [self.layers addObject:layer];
     self.currLayerIndex++;

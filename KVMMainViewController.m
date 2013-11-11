@@ -26,7 +26,7 @@
 - (void)setup
 {
     self.layerColors = [[NSMutableArray alloc] initWithObjects:[UIColor cyanColor],[UIColor yellowColor], [UIColor magentaColor], [UIColor whiteColor], nil];
-    self.layerManager = [[KVMLayerManager alloc] initWithColumns:8 AndColors:self.layerColors];
+    self.layerManager = [[KVMLayerManager alloc] initWithColumns:8 AndColors:self.layerColors AndTarget:self];
     self.player = [[KVMPlayer alloc] initWithLayerManager:self.layerManager];
 }
 
@@ -73,7 +73,7 @@
 - (void)panOptions:(CGPoint)velocity
 {
     // Up gesture
-    if (velocity.y < 0 && self.optionsController == nil)
+    if (velocity.y < 0)
     {
         [self presentOptionsViewController];
     }
@@ -102,6 +102,7 @@
 - (void)addNewLayer
 {
     KVMLayer* layer = [self.layerManager addLayer];
+    [layer setupOptionsControllerWithDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteCurrentLayer)];
     [self.switchBoardView addSubview:layer];
     
     [self tintElements:[layer getColor]];
@@ -170,17 +171,15 @@
 
 - (void)presentOptionsViewController
 {
-    self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:[self.arrowView tintColor]AndTarget:self];
-    [self.optionsController setDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteCurrentLayer)];
-    
     CGRect mainrect = self.view.bounds;
     CGRect newRect = CGRectMake(0, mainrect.size.height, mainrect.size.width, mainrect.size.height);
     
-    [self.view addSubview:self.optionsController.view];
-    self.optionsController.view.frame = newRect;
+    KVMOptionsViewController* currOptionsController = [[self.layerManager getCurrentLayer] getOptionsController];
+    [self.view addSubview:currOptionsController.view];
+    currOptionsController.view.frame = newRect;
     
     [UIView animateWithDuration:0.5 animations:^{
-        self.optionsController.view.frame = mainrect;
+        currOptionsController.view.frame = mainrect;
     } completion:nil];
 }
 
@@ -188,12 +187,13 @@
 {
     CGRect mainrect = self.view.bounds;
     CGRect newRect = CGRectMake(0, mainrect.size.height, mainrect.size.width, 0);
-
+    
+    KVMOptionsViewController* currOptionsController = [[self.layerManager getCurrentLayer] getOptionsController];
     [UIView animateWithDuration:0.5 animations:^{
-        self.optionsController.view.frame = newRect;
+        currOptionsController.view.frame = newRect;
     } completion:^(BOOL finished) {
-        [self.optionsController.view removeFromSuperview];
-        self.optionsController = nil;
+        [currOptionsController.view removeFromSuperview];
+        [currOptionsController finishedDismissal];
         [self.panRecognizer setEnabled:YES];
     }];
 }

@@ -11,6 +11,7 @@
 
 @interface KVMLayerManager : UITabBarController
 
+@property id target;
 @property int currLayerIndex;
 @property int currColumnIndex;
 @property int layerSize;
@@ -18,7 +19,7 @@
 @property (strong, nonatomic) NSMutableArray* colorsStack;
 @property (strong, nonatomic) NSMutableArray* layers;
 
-- (id)initWithColumns:(int)layerSize AndColors:(NSMutableArray *)colors;
+- (id)initWithColumns:(int)layerSize AndColors:(NSMutableArray *)colors AndTarget:(id)target;
 - (BOOL)canAddLayer;
 - (BOOL)hasNextLayer;
 - (BOOL)hasPreviousLayer;

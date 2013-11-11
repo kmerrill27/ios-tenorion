@@ -31,6 +31,11 @@
     self.deleteAction = deleteAction;
 }
 
+- (void)finishedDismissal
+{
+    self.isBeingDismissed = NO;
+}
+
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer
 {
     CGPoint velocity = [recognizer velocityInView:self.view];
@@ -45,9 +50,8 @@
 
 - (IBAction)didPressDelete:(UIButton *)sender
 {
-    [self.target performSelector:self.deleteAction withObject:nil afterDelay:0.0];
-    self.isBeingDismissed = YES;
     [self.target performSelector:self.dismissAction withObject:nil afterDelay:0.0];
+    [self.target performSelector:self.deleteAction withObject:nil afterDelay:0.0];
 }
 
 - (IBAction)didChangeVolume:(UISlider *)sender
@@ -57,7 +61,16 @@
 
 - (IBAction)didChangeInstrument:(UISegmentedControl *)sender
 {
-    
+    if (sender.selectedSegmentIndex == 1)
+    {
+        [self fadeElement:self.scaleControl InDirection:YES];
+        [self fadeElement:self.frequencyControl InDirection:YES];
+    }
+    else if (self.scaleControl.hidden == YES)
+    {
+        [self fadeElement:self.scaleControl InDirection:NO];
+        [self fadeElement:self.frequencyControl InDirection:NO];
+    }
 }
 
 - (IBAction)didChangeScale:(UISegmentedControl *)sender
@@ -68,6 +81,16 @@
 - (IBAction)didChangeFrequency:(UISegmentedControl *)sender
 {
     
+}
+
+- (void)fadeElement:(UISegmentedControl *)control InDirection:(BOOL)inOrOut
+{
+    [UIView transitionWithView:control
+                      duration:0.3
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:NULL
+                    completion:NULL];
+    control.hidden = inOrOut;
 }
 
 - (void)viewDidLoad

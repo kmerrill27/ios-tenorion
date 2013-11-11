@@ -18,6 +18,8 @@
 		178341C1182AE39300ADF751 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 178341BC182AE33000ADF751 /* AudioToolbox.framework */; };
 		178341C3182B382D00ADF751 /* 3C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178341C2182B382D00ADF751 /* 3C.wav */; };
 		178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341C5182B4CBF00ADF751 /* KVMLayer.m */; };
+		17A2FC2618309140008515F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2FC2518309140008515F1 /* AVFoundation.framework */; };
+		17A2FC2C183091CC008515F1 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2FC2B183091CC008515F1 /* SoundManager.m */; };
 		17B4498618260E4E002D31C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498518260E4E002D31C6 /* Foundation.framework */; };
 		17B4498818260E4E002D31C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498718260E4E002D31C6 /* CoreGraphics.framework */; };
 		17B4498A18260E4E002D31C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498918260E4E002D31C6 /* UIKit.framework */; };
@@ -64,6 +66,9 @@
 		178341C2182B382D00ADF751 /* 3C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3C.wav; sourceTree = "<group>"; };
 		178341C4182B4CBF00ADF751 /* KVMLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMLayer.h; sourceTree = "<group>"; };
 		178341C5182B4CBF00ADF751 /* KVMLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMLayer.m; sourceTree = "<group>"; };
+		17A2FC2518309140008515F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		17A2FC2A183091CC008515F1 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
+		17A2FC2B183091CC008515F1 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
 		17B4498218260E4E002D31C6 /* Tenorion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tenorion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17B4498518260E4E002D31C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17B4498718260E4E002D31C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -98,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17A2FC2618309140008515F1 /* AVFoundation.framework in Frameworks */,
 				178341C1182AE39300ADF751 /* AudioToolbox.framework in Frameworks */,
 				17B4498818260E4E002D31C6 /* CoreGraphics.framework in Frameworks */,
 				17B4498A18260E4E002D31C6 /* UIKit.framework in Frameworks */,
@@ -118,6 +124,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17A2FC2318308DD6008515F1 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1773ED0D182DA86F009847EA /* bass.png */,
+				1773ED0B182DA858009847EA /* treble.png */,
+				1773ED03182DA248009847EA /* drum.png */,
+				1773ED04182DA248009847EA /* guitar.png */,
+				1773ED05182DA248009847EA /* microphone.png */,
+				1773ED06182DA248009847EA /* piano.png */,
+				17CA69DC182CA4A500D85596 /* arrow.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		17A2FC2418308DEB008515F1 /* tones */ = {
+			isa = PBXGroup;
+			children = (
+				178341C2182B382D00ADF751 /* 3C.wav */,
+			);
+			name = tones;
+			sourceTree = "<group>";
+		};
 		17B4497918260E4E002D31C6 = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +168,7 @@
 		17B4498418260E4E002D31C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17A2FC2518309140008515F1 /* AVFoundation.framework */,
 				178341BC182AE33000ADF751 /* AudioToolbox.framework */,
 				17B4498518260E4E002D31C6 /* Foundation.framework */,
 				17B4498718260E4E002D31C6 /* CoreGraphics.framework */,
@@ -152,14 +181,8 @@
 		17B4498B18260E4E002D31C6 /* Tenorion */ = {
 			isa = PBXGroup;
 			children = (
-				1773ED0D182DA86F009847EA /* bass.png */,
-				1773ED0B182DA858009847EA /* treble.png */,
-				1773ED03182DA248009847EA /* drum.png */,
-				1773ED04182DA248009847EA /* guitar.png */,
-				1773ED05182DA248009847EA /* microphone.png */,
-				1773ED06182DA248009847EA /* piano.png */,
-				17CA69DC182CA4A500D85596 /* arrow.png */,
-				178341C2182B382D00ADF751 /* 3C.wav */,
+				17A2FC2418308DEB008515F1 /* tones */,
+				17A2FC2318308DD6008515F1 /* images */,
 				178341BE182AE38A00ADF751 /* KVMTone.h */,
 				178341BF182AE38A00ADF751 /* KVMTone.m */,
 				17B449B418260EE2002D31C6 /* KVMMainViewController.h */,
@@ -180,6 +203,8 @@
 				17CA69DE182CBD1900D85596 /* KVMOptionsViewController.h */,
 				17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */,
 				17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */,
+				17A2FC2A183091CC008515F1 /* SoundManager.h */,
+				17A2FC2B183091CC008515F1 /* SoundManager.m */,
 			);
 			path = Tenorion;
 			sourceTree = "<group>";
@@ -331,6 +356,7 @@
 				17B4499618260E4E002D31C6 /* KVMAppDelegate.m in Sources */,
 				178341C0182AE38A00ADF751 /* KVMTone.m in Sources */,
 				17B449B718260EE2002D31C6 /* KVMMainViewController.m in Sources */,
+				17A2FC2C183091CC008515F1 /* SoundManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

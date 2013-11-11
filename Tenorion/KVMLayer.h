@@ -8,15 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "KVMSwitch.h"
+#import "KVMOptionsViewController.h"
 
 @interface KVMLayer : UIView
 
+@property id target;
 @property int size;
 @property (strong, nonatomic) UIColor* switchColor;
 @property (strong, nonatomic) NSMutableArray* switches;
+@property (strong, nonatomic) KVMOptionsViewController* optionsController;
 
-- (id)initWithFrame:(CGRect)frame AndColumns:(int)size AndColor:(UIColor *)color;
+- (id)initWithFrame:(CGRect)frame AndColumns:(int)size AndColor:(UIColor *)color AndTarget:(id)target;
 - (NSMutableArray *)getColumn:(int)columnIndex;
 - (UIColor *)getColor;
+- (KVMOptionsViewController *)getOptionsController;
+- (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
 
 @end

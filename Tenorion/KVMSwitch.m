@@ -55,6 +55,16 @@
             }];
         }];
     }
+    else
+    {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.backgroundColor = [self.offColor colorWithAlphaComponent:0.5];
+        } completion:^(BOOL finished){
+            [UIView animateWithDuration:0.4 animations:^{
+                self.backgroundColor = [self.offColor colorWithAlphaComponent:0.3];
+            }];
+        }];
+    }
 }
 
 @end

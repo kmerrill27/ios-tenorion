@@ -10,17 +10,29 @@
 
 @implementation KVMLayer
 
-- (id)initWithFrame:(CGRect)frame AndColumns:(int)size AndColor:(UIColor *)color
+- (id)initWithFrame:(CGRect)frame AndColumns:(int)size AndColor:(UIColor *)color AndTarget:(id)target
 {
     self = [super initWithFrame:frame];
     if (self)
     {
         self.size = size;
         self.switchColor = color;
+        self.target = target;
         self.opaque = NO;
         [self drawSwitches];
     }
     return self;
+}
+
+- (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction
+{
+    self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:self.switchColor AndTarget:self.target];
+    [self.optionsController setDismissAction:dismissAction AndDeleteAction:deleteAction];
+}
+
+- (KVMOptionsViewController *)getOptionsController
+{
+    return self.optionsController;
 }
 
 - (NSMutableArray *)getColumn:(int)columnIndex

@@ -46,10 +46,7 @@
 {
     for (KVMSwitch* currSwitch in switchColumn)
     {
-        if (currSwitch.isOn)
-        {
-            [currSwitch play];
-        }
+        [currSwitch play];
     }
 }
 
