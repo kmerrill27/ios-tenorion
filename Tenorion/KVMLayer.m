@@ -68,4 +68,12 @@
     }
 }
 
+- (void)setVolume:(float)volume
+{
+    for (KVMSwitch* currSwitch in self.switches)
+    {
+        [currSwitch setVolume:volume];
+    }
+}
+
 @end

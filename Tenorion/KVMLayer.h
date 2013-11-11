@@ -23,5 +23,6 @@
 - (UIColor *)getColor;
 - (KVMOptionsViewController *)getOptionsController;
 - (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
+- (void)setVolume:(float)volume;
 
 @end

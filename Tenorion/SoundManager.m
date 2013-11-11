@@ -482,6 +482,13 @@ NSString *const SoundDidFinishPlayingNotification = @"SoundDidFinishPlayingNotif
     [self stopMusic:YES];
 }
 
+- (void)playSound:(id)soundOrName WithVolume:(float)volume
+{
+    Sound *sound = [soundOrName isKindOfClass:[Sound class]]? soundOrName: [Sound soundNamed:soundOrName];
+    [sound setVolume:volume];
+    [self playSound:sound];
+}
+
 - (void)playSound:(id)soundOrName looping:(BOOL)looping fadeIn:(BOOL)fadeIn
 {
     Sound *sound = [soundOrName isKindOfClass:[Sound class]]? soundOrName: [Sound soundNamed:soundOrName];

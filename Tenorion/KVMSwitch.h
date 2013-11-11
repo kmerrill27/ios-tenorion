@@ -7,17 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "KVMTone.h"
+#import "SoundManager.h"
 
 @interface KVMSwitch : UIButton
 
 @property BOOL isOn;
-@property (strong, nonatomic) KVMTone* switchTone;
+@property float volume;
+@property (strong, nonatomic) NSString* toneFile;
 @property (strong, nonatomic) UIColor* onColor;
 @property (strong, nonatomic) UIColor* offColor;
 
 - (id)initWithFrame:(CGRect)frame WithTone:(NSString *)toneFile AndColor:(UIColor *)color;
 - (void)toggle;
+- (void)setVolume:(float)volume;
 - (void)play;
+- (void)highlight;
 
 @end

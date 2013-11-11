@@ -109,6 +109,7 @@ typedef void (^SoundCompletionHandler)(BOOL didFinish);
 
 - (void)playSound:(id)soundOrName looping:(BOOL)looping fadeIn:(BOOL)fadeIn;
 - (void)playSound:(id)soundOrName looping:(BOOL)looping;
+- (void)playSound:(id)soundOrName WithVolume:(float)volume;
 - (void)playSound:(id)soundOrName;
 
 - (void)stopSound:(id)soundOrName fadeOut:(BOOL)fadeOut;

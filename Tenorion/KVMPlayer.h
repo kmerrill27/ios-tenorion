@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "KVMSwitch.h"
 #import "KVMLayerManager.h"
+#import "SoundManager.h"
 
 @interface KVMPlayer : NSObject
 
 @property (strong, nonatomic) KVMLayerManager* layerManager;
+@property (strong, nonatomic) SoundManager* soundManager;
 
 - (id)initWithLayerManager:(KVMLayerManager *)layerManager;
 - (void)startPlayback;

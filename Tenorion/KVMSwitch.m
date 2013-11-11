@@ -14,8 +14,9 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.switchTone = [[KVMTone alloc] initWithTone:toneFile];
+        self.toneFile = toneFile;
         self.onColor = color;
+        self.volume = 1.0f;
         [self setupSwitch];
     }
     return self;
@@ -43,28 +44,25 @@
 
 - (void)play
 {
-    if (self.isOn)
-    {
-        int originalSize = self.bounds.size.width;
+    int originalSize = self.bounds.size.width;
+    [UIView animateWithDuration:0.2 animations:^{
+        [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
+    } completion:^(BOOL finished){
         [UIView animateWithDuration:0.2 animations:^{
-            [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
-            [self.switchTone playTone];
-        } completion:^(BOOL finished){
-            [UIView animateWithDuration:0.2 animations:^{
-                [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
-            }];
+            [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
         }];
-    }
-    else
-    {
-        [UIView animateWithDuration:0.2 animations:^{
-            self.backgroundColor = [self.offColor colorWithAlphaComponent:0.5];
-        } completion:^(BOOL finished){
-            [UIView animateWithDuration:0.4 animations:^{
-                self.backgroundColor = [self.offColor colorWithAlphaComponent:0.3];
-            }];
+    }];
+}
+
+- (void)highlight
+{
+    [UIView animateWithDuration:0.2 animations:^{
+        self.backgroundColor = [self.offColor colorWithAlphaComponent:0.5];
+    } completion:^(BOOL finished){
+        [UIView animateWithDuration:0.4 animations:^{
+            self.backgroundColor = [self.offColor colorWithAlphaComponent:0.3];
         }];
-    }
+    }];
 }
 
 @end

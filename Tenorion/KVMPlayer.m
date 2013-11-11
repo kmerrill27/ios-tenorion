@@ -16,6 +16,8 @@
     if (self)
     {
         self.layerManager = layerManager;
+        self.soundManager = [SoundManager sharedManager];
+        [self.soundManager prepareToPlay];
     }
     return self;
 }
@@ -46,7 +48,15 @@
 {
     for (KVMSwitch* currSwitch in switchColumn)
     {
-        [currSwitch play];
+        if (currSwitch.isOn)
+        {
+            [currSwitch play];
+            [self.soundManager playSound:currSwitch.toneFile WithVolume:currSwitch.volume];
+        }
+        else
+        {
+            [currSwitch highlight];
+        }
     }
 }
 
