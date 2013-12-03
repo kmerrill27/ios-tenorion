@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17188EBE184E9A0000F444C2 /* g4shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EBD184E9A0000F444C2 /* g4shorter.wav */; };
+		17188EC6184E9B0100F444C2 /* a4shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EBF184E9B0100F444C2 /* a4shorter.wav */; };
+		17188EC7184E9B0100F444C2 /* b4shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EC0184E9B0100F444C2 /* b4shorter.wav */; };
+		17188EC8184E9B0100F444C2 /* c4shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EC1184E9B0100F444C2 /* c4shorter.wav */; };
+		17188EC9184E9B0100F444C2 /* c5shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EC2184E9B0100F444C2 /* c5shorter.wav */; };
+		17188ECA184E9B0100F444C2 /* d4shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EC3184E9B0100F444C2 /* d4shorter.wav */; };
+		17188ECB184E9B0100F444C2 /* e4shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EC4184E9B0100F444C2 /* e4shorter.wav */; };
+		17188ECC184E9B0100F444C2 /* f4shorter.wav in Resources */ = {isa = PBXBuildFile; fileRef = 17188EC5184E9B0100F444C2 /* f4shorter.wav */; };
+		17188ECF184E9B4900F444C2 /* KVMToneGroups.m in Sources */ = {isa = PBXBuildFile; fileRef = 17188ECE184E9B4900F444C2 /* KVMToneGroups.m */; };
 		1773ED07182DA248009847EA /* drum.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED03182DA248009847EA /* drum.png */; };
 		1773ED08182DA248009847EA /* guitar.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED04182DA248009847EA /* guitar.png */; };
 		1773ED09182DA248009847EA /* microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED05182DA248009847EA /* microphone.png */; };
@@ -14,7 +23,6 @@
 		1773ED0C182DA858009847EA /* treble.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED0B182DA858009847EA /* treble.png */; };
 		1773ED0E182DA86F009847EA /* bass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED0D182DA86F009847EA /* bass.png */; };
 		178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341B7182ABD4700ADF751 /* KVMSwitch.m */; };
-		178341C3182B382D00ADF751 /* 3C.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178341C2182B382D00ADF751 /* 3C.wav */; };
 		178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341C5182B4CBF00ADF751 /* KVMLayer.m */; };
 		17A2FC2618309140008515F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2FC2518309140008515F1 /* AVFoundation.framework */; };
 		17A2FC2C183091CC008515F1 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2FC2B183091CC008515F1 /* SoundManager.m */; };
@@ -50,6 +58,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17188EBD184E9A0000F444C2 /* g4shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = g4shorter.wav; sourceTree = "<group>"; };
+		17188EBF184E9B0100F444C2 /* a4shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a4shorter.wav; sourceTree = "<group>"; };
+		17188EC0184E9B0100F444C2 /* b4shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = b4shorter.wav; sourceTree = "<group>"; };
+		17188EC1184E9B0100F444C2 /* c4shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c4shorter.wav; sourceTree = "<group>"; };
+		17188EC2184E9B0100F444C2 /* c5shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c5shorter.wav; sourceTree = "<group>"; };
+		17188EC3184E9B0100F444C2 /* d4shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d4shorter.wav; sourceTree = "<group>"; };
+		17188EC4184E9B0100F444C2 /* e4shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = e4shorter.wav; sourceTree = "<group>"; };
+		17188EC5184E9B0100F444C2 /* f4shorter.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f4shorter.wav; sourceTree = "<group>"; };
+		17188ECD184E9B4900F444C2 /* KVMToneGroups.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMToneGroups.h; sourceTree = "<group>"; };
+		17188ECE184E9B4900F444C2 /* KVMToneGroups.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMToneGroups.m; sourceTree = "<group>"; };
 		1773ED03182DA248009847EA /* drum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drum.png; sourceTree = "<group>"; };
 		1773ED04182DA248009847EA /* guitar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guitar.png; sourceTree = "<group>"; };
 		1773ED05182DA248009847EA /* microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone.png; sourceTree = "<group>"; };
@@ -59,7 +77,6 @@
 		178341B6182ABD4700ADF751 /* KVMSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMSwitch.h; sourceTree = "<group>"; };
 		178341B7182ABD4700ADF751 /* KVMSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMSwitch.m; sourceTree = "<group>"; };
 		178341BC182AE33000ADF751 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
-		178341C2182B382D00ADF751 /* 3C.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 3C.wav; sourceTree = "<group>"; };
 		178341C4182B4CBF00ADF751 /* KVMLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMLayer.h; sourceTree = "<group>"; };
 		178341C5182B4CBF00ADF751 /* KVMLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMLayer.m; sourceTree = "<group>"; };
 		17A2FC2518309140008515F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -136,7 +153,14 @@
 		17A2FC2418308DEB008515F1 /* tones */ = {
 			isa = PBXGroup;
 			children = (
-				178341C2182B382D00ADF751 /* 3C.wav */,
+				17188EBF184E9B0100F444C2 /* a4shorter.wav */,
+				17188EC0184E9B0100F444C2 /* b4shorter.wav */,
+				17188EC1184E9B0100F444C2 /* c4shorter.wav */,
+				17188EC2184E9B0100F444C2 /* c5shorter.wav */,
+				17188EC3184E9B0100F444C2 /* d4shorter.wav */,
+				17188EC4184E9B0100F444C2 /* e4shorter.wav */,
+				17188EC5184E9B0100F444C2 /* f4shorter.wav */,
+				17188EBD184E9A0000F444C2 /* g4shorter.wav */,
 			);
 			name = tones;
 			sourceTree = "<group>";
@@ -198,6 +222,8 @@
 				17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */,
 				17A2FC2A183091CC008515F1 /* SoundManager.h */,
 				17A2FC2B183091CC008515F1 /* SoundManager.m */,
+				17188ECD184E9B4900F444C2 /* KVMToneGroups.h */,
+				17188ECE184E9B4900F444C2 /* KVMToneGroups.m */,
 			);
 			path = Tenorion;
 			sourceTree = "<group>";
@@ -310,18 +336,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				178341C3182B382D00ADF751 /* 3C.wav in Resources */,
 				1773ED08182DA248009847EA /* guitar.png in Resources */,
+				17188EBE184E9A0000F444C2 /* g4shorter.wav in Resources */,
 				17B449B818260EE2002D31C6 /* KVMMainViewController.xib in Resources */,
 				1773ED09182DA248009847EA /* microphone.png in Resources */,
+				17188EC7184E9B0100F444C2 /* b4shorter.wav in Resources */,
+				17188EC8184E9B0100F444C2 /* c4shorter.wav in Resources */,
 				17B4499018260E4E002D31C6 /* InfoPlist.strings in Resources */,
 				17CA69DD182CA4A500D85596 /* arrow.png in Resources */,
+				17188EC9184E9B0100F444C2 /* c5shorter.wav in Resources */,
+				17188EC6184E9B0100F444C2 /* a4shorter.wav in Resources */,
 				17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */,
 				1773ED0A182DA248009847EA /* piano.png in Resources */,
 				1773ED0E182DA86F009847EA /* bass.png in Resources */,
+				17188ECC184E9B0100F444C2 /* f4shorter.wav in Resources */,
 				1773ED0C182DA858009847EA /* treble.png in Resources */,
+				17188ECA184E9B0100F444C2 /* d4shorter.wav in Resources */,
 				17B4499818260E4E002D31C6 /* Images.xcassets in Resources */,
 				1773ED07182DA248009847EA /* drum.png in Resources */,
+				17188ECB184E9B0100F444C2 /* e4shorter.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +379,7 @@
 				17CA69CF182C3B5600D85596 /* KVMLayerManager.m in Sources */,
 				178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */,
 				17B4499218260E4E002D31C6 /* main.m in Sources */,
+				17188ECF184E9B4900F444C2 /* KVMToneGroups.m in Sources */,
 				17B4499618260E4E002D31C6 /* KVMAppDelegate.m in Sources */,
 				17B449B718260EE2002D31C6 /* KVMMainViewController.m in Sources */,
 				17A2FC2C183091CC008515F1 /* SoundManager.m in Sources */,

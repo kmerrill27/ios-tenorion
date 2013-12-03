@@ -19,7 +19,6 @@
 
 - (id)initWithFrame:(CGRect)frame WithTone:(NSString *)toneFile AndColor:(UIColor *)color;
 - (void)toggle;
-- (void)setVolume:(float)volume;
 - (void)play;
 - (void)highlight;
 

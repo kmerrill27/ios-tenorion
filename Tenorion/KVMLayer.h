@@ -14,6 +14,8 @@
 
 @property id target;
 @property int size;
+@property SEL dismissAction;
+@property SEL deleteAction;
 @property (strong, nonatomic) UIColor* switchColor;
 @property (strong, nonatomic) NSMutableArray* switches;
 @property (strong, nonatomic) KVMOptionsViewController* optionsController;
@@ -23,6 +25,6 @@
 - (UIColor *)getColor;
 - (KVMOptionsViewController *)getOptionsController;
 - (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
-- (void)setVolume:(float)volume;
+- (void)setVolume:(NSNumber *)volume;
 
 @end

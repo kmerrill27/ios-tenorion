@@ -26,8 +26,11 @@
 
 - (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction
 {
-    self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:self.switchColor AndTarget:self.target];
-    [self.optionsController setDismissAction:dismissAction AndDeleteAction:deleteAction];
+    self.dismissAction = dismissAction;
+    self.deleteAction = deleteAction;
+    
+    self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:self.switchColor AndTarget:self];
+    [self.optionsController setDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteLayer) AndVolumeAction:@selector(setVolume:)];
 }
 
 - (KVMOptionsViewController *)getOptionsController
@@ -60,7 +63,7 @@
         [self.switches addObject:switchColumn];
         
         for(int col = 0; col < self.size; col++) {
-            KVMSwitch* tempSwitch = [[KVMSwitch alloc] initWithFrame:CGRectMake(row * (switchSize+3), col * (switchSize+3), switchSize, switchSize) WithTone:@"3C.wav" AndColor:self.switchColor];
+            KVMSwitch* tempSwitch = [[KVMSwitch alloc] initWithFrame:CGRectMake(row * (switchSize+3), col * (switchSize+3), switchSize, switchSize) WithTone:@"g4shorter.wav" AndColor:self.switchColor];
             [tempSwitch addTarget:self action:@selector(didPressSwitch:) forControlEvents:UIControlEventTouchUpInside];
             [switchColumn addObject:tempSwitch];
             [self addSubview:tempSwitch];
@@ -68,12 +71,25 @@
     }
 }
 
-- (void)setVolume:(float)volume
+- (void)setVolume:(NSNumber *)volume
 {
-    for (KVMSwitch* currSwitch in self.switches)
+    for (NSMutableArray* switchColumn in self.switches)
     {
-        [currSwitch setVolume:volume];
+        for (KVMSwitch* currSwitch in switchColumn)
+        {
+            [currSwitch setVolume:volume.floatValue];
+        }
     }
+}
+
+- (void)dismissOptionsController
+{
+    [self.target performSelector:self.dismissAction withObject:nil afterDelay:0.0];
+}
+
+- (void)deleteLayer
+{
+    [self.target performSelector:self.deleteAction withObject:nil afterDelay:0.0];
 }
 
 @end

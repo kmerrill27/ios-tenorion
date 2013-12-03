@@ -28,7 +28,7 @@
         [self playSwitchBoard];
     } completion:^(BOOL finished){
         [UIView animateWithDuration:0 animations:^{
-            [self performSelector:@selector(startPlayback) withObject:nil afterDelay:3.0];
+            [self performSelector:@selector(startPlayback) withObject:nil afterDelay:2.4];
         }];
     }];
 }
@@ -38,7 +38,7 @@
     int i = 0;
     while ([self.layerManager hasNextColumn])
     {
-        [self performSelector:@selector(playSwitchColumn:) withObject:[self.layerManager getNextColumn] afterDelay:0.25*i];
+        [self performSelector:@selector(playSwitchColumn:) withObject:[self.layerManager getNextColumn] afterDelay:0.3*i];
         i++;
     }
     [self.layerManager resetColumns];

@@ -45,23 +45,30 @@
 - (void)play
 {
     int originalSize = self.bounds.size.width;
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
     } completion:^(BOOL finished){
-        [UIView animateWithDuration:0.2 animations:^{
+        [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
-        }];
+        } completion:nil];
     }];
 }
 
 - (void)highlight
 {
-    [UIView animateWithDuration:0.2 animations:^{
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         self.backgroundColor = [self.offColor colorWithAlphaComponent:0.5];
     } completion:^(BOOL finished){
-        [UIView animateWithDuration:0.4 animations:^{
-            self.backgroundColor = [self.offColor colorWithAlphaComponent:0.3];
-        }];
+        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            if (self.isOn)
+            {
+                self.backgroundColor = self.onColor;
+            }
+            else
+            {
+                self.backgroundColor = self.offColor;
+            }
+        } completion:nil];
     }];
 }
 

@@ -13,6 +13,7 @@
 @property id target;
 @property SEL dismissAction;
 @property SEL deleteAction;
+@property SEL volumeAction;
 @property BOOL isBeingDismissed;
 @property UIColor* themeColor;
 
@@ -22,7 +23,7 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl* frequencyControl;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target;
-- (void)setDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
+- (void)setDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction AndVolumeAction:(SEL)volumeAction;
 - (void)finishedDismissal;
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer;
 - (IBAction)didChangeVolume:(UISlider *)sender;

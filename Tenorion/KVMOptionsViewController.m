@@ -25,10 +25,11 @@
     return self;
 }
 
-- (void)setDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction
+- (void)setDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction AndVolumeAction:(SEL)volumeAction
 {
     self.dismissAction = dismissAction;
     self.deleteAction = deleteAction;
+    self.volumeAction = volumeAction;
 }
 
 - (void)finishedDismissal
@@ -56,7 +57,7 @@
 
 - (IBAction)didChangeVolume:(UISlider *)sender
 {
-    
+    [self.target performSelector:self.volumeAction withObject:[NSNumber numberWithFloat:[sender value]] afterDelay:0.0];
 }
 
 - (IBAction)didChangeInstrument:(UISegmentedControl *)sender
