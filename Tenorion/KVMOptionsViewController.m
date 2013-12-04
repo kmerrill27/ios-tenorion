@@ -14,22 +14,27 @@
 
 @implementation KVMOptionsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target
+- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target AndToneGroups:(KVMToneGroups *)toneGroups
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
         self.themeColor = color;
         self.target = target;
+        self.toneGroups = toneGroups;
         self.isBeingDismissed = NO;
+        self.scale = self.scaleControl.selectedSegmentIndex;
+        self.frequency = self.frequencyControl.selectedSegmentIndex;
+        self.instrument = self.instrumentControl.selectedSegmentIndex;
     }
     return self;
 }
 
-- (void)setDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction AndVolumeAction:(SEL)volumeAction
+- (void)setDismissAction:(SEL)disAction AndDeleteAction:(SEL)delAction AndVolumeAction:(SEL)volAction AndTonesAction:(SEL)tonesAction
 {
-    self.dismissAction = dismissAction;
-    self.deleteAction = deleteAction;
-    self.volumeAction = volumeAction;
+    self.dismissAction = disAction;
+    self.deleteAction = delAction;
+    self.volumeAction = volAction;
+    self.tonesAction = tonesAction;
 }
 
 - (void)finishedDismissal
@@ -72,16 +77,21 @@
         [self fadeElement:self.scaleControl InDirection:NO];
         [self fadeElement:self.frequencyControl InDirection:NO];
     }
+    
+    self.instrument = sender.selectedSegmentIndex;
+    [self.target performSelector:self.tonesAction withObject:[self getTones] afterDelay:0.0];
 }
 
 - (IBAction)didChangeScale:(UISegmentedControl *)sender
 {
-    
+    self.scale = sender.selectedSegmentIndex;
+    [self.target performSelector:self.tonesAction withObject:[self getTones] afterDelay:0.0];
 }
 
 - (IBAction)didChangeFrequency:(UISegmentedControl *)sender
 {
-    
+    self.frequency = sender.selectedSegmentIndex;
+    [self.target performSelector:self.tonesAction withObject:[self getTones] afterDelay:0.0];
 }
 
 - (void)fadeElement:(UISegmentedControl *)control InDirection:(BOOL)inOrOut
@@ -92,6 +102,12 @@
                     animations:NULL
                     completion:NULL];
     control.hidden = inOrOut;
+}
+
+- (NSArray *)getTones
+{
+    NSLog(@"%d", self.instrument);
+    return [self.toneGroups getTonesWithInstrument:self.instrument AndScale:self.scale AndFrequency:self.frequency];
 }
 
 - (void)viewDidLoad

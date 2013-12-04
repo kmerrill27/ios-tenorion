@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "KVMSwitch.h"
 #import "KVMOptionsViewController.h"
+#import "KVMToneGroups.h"
 
 @interface KVMLayer : UIView
 
@@ -16,6 +17,7 @@
 @property int size;
 @property SEL dismissAction;
 @property SEL deleteAction;
+@property (strong, nonatomic) KVMToneGroups* toneGroups;
 @property (strong, nonatomic) UIColor* switchColor;
 @property (strong, nonatomic) NSMutableArray* switches;
 @property (strong, nonatomic) KVMOptionsViewController* optionsController;
@@ -26,5 +28,6 @@
 - (KVMOptionsViewController *)getOptionsController;
 - (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
 - (void)setVolume:(NSNumber *)volume;
+- (void)setTones:(NSArray *)tones;
 
 @end

@@ -19,6 +19,8 @@
         self.switchColor = color;
         self.target = target;
         self.opaque = NO;
+        self.toneGroups = [[KVMToneGroups alloc] init];
+        self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:self.switchColor AndTarget:self AndToneGroups:self.toneGroups];
         [self drawSwitches];
     }
     return self;
@@ -29,8 +31,7 @@
     self.dismissAction = dismissAction;
     self.deleteAction = deleteAction;
     
-    self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:self.switchColor AndTarget:self];
-    [self.optionsController setDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteLayer) AndVolumeAction:@selector(setVolume:)];
+    [self.optionsController setDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteLayer) AndVolumeAction:@selector(setVolume:) AndTonesAction:@selector(setTones:)];
 }
 
 - (KVMOptionsViewController *)getOptionsController
@@ -57,13 +58,17 @@
 {
     int switchSize = 30;
     self.switches = [[NSMutableArray alloc] init];
+    
+    NSArray* startingTones = [self.optionsController getTones];
 
-    for(int row = 0; row < self.size; row++) {
+    for(int row = 0; row < self.size; row++)
+    {
         NSMutableArray* switchColumn = [[NSMutableArray alloc] init];
         [self.switches addObject:switchColumn];
         
-        for(int col = 0; col < self.size; col++) {
-            KVMSwitch* tempSwitch = [[KVMSwitch alloc] initWithFrame:CGRectMake(row * (switchSize+3), col * (switchSize+3), switchSize, switchSize) WithTone:@"g4shorter.wav" AndColor:self.switchColor];
+        for(int col = 0; col < self.size; col++)
+        {
+            KVMSwitch* tempSwitch = [[KVMSwitch alloc] initWithFrame:CGRectMake(row * (switchSize+3), col * (switchSize+3), switchSize, switchSize) WithTone:[startingTones objectAtIndex:col] AndColor:self.switchColor];
             [tempSwitch addTarget:self action:@selector(didPressSwitch:) forControlEvents:UIControlEventTouchUpInside];
             [switchColumn addObject:tempSwitch];
             [self addSubview:tempSwitch];
@@ -78,6 +83,19 @@
         for (KVMSwitch* currSwitch in switchColumn)
         {
             [currSwitch setVolume:volume.floatValue];
+        }
+    }
+}
+
+- (void)setTones:(NSArray *)tones
+{
+    for (int row = 0; row < self.size; row++)
+    {
+        NSMutableArray* currColumn = [self.switches objectAtIndex:row];
+        for (int col = 0; col < self.size; col++)
+        {
+            KVMSwitch* currSwitch = [currColumn objectAtIndex:col];
+            [currSwitch setToneFile:[tones objectAtIndex:col]];
         }
     }
 }

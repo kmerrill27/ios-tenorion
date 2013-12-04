@@ -10,13 +10,9 @@
 
 @interface KVMToneGroups : NSObject
 
-@property (strong, nonatomic) NSArray* pianoCTreble;
-@property (strong, nonatomic) NSArray* pianoCBass;
-@property (strong, nonatomic) NSArray* pianoGTreble;
-@property (strong, nonatomic) NSArray* pianoGBass;
-@property (strong, nonatomic) NSArray* pianoCMinorTreble;
-@property (strong, nonatomic) NSArray* pianoCMinorBass;
+@property (strong, nonatomic) NSMutableArray* tones;
 
 -(id)init;
+-(NSArray *)getTonesWithInstrument:(int)instr AndScale:(int)scale AndFrequency:(int)freq;
 
 @end

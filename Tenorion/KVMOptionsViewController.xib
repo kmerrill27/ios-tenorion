@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KVMOptionsViewController">
             <connections>
                 <outlet property="frequencyControl" destination="E2t-PL-Pm4" id="oji-mm-zq4"/>
+                <outlet property="instrumentControl" destination="oua-CP-89t" id="dcN-1I-b70"/>
                 <outlet property="panRecognizer" destination="Rfb-SF-0ol" id="QgQ-dY-CBG"/>
                 <outlet property="scaleControl" destination="LsZ-Bl-CCt" id="Ecg-tI-g8X"/>
                 <outlet property="view" destination="1" id="3"/>

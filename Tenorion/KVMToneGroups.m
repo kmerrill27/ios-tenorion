@@ -16,6 +16,7 @@
     
     if (self)
     {
+        self.tones = [[NSMutableArray alloc] init];
         [self initPianoTones];
         [self initGuitarTones];
         [self initDrumTones];
@@ -27,14 +28,29 @@
 
 -(void)initPianoTones
 {
-    self.pianoCTreble = [[NSArray alloc] initWithObjects: @"c4shorter.wav", @"d4shorter.wav", @"e4shorter.wav", @"f4shorter.wav", @"g4shorter.wav", @"a4shorter.wav", @"b4shorter.wav", @"c5shorter.wav", nil];
-    self.pianoCBass = [[NSArray alloc] initWithObjects: @"c2shorter.wav", @"d2shorter.wav", @"e2shorter.wav", @"f2shorter.wav", @"g2shorter.wav", @"a2shorter.wav", @"b2shorter.wav", @"c3shorter.wav", nil];
+    NSArray* pianoCTreble = [[NSArray alloc] initWithObjects: @"c5.wav", @"b4.wav", @"a4.wav", @"g4.wav", @"f4.wav", @"e4.wav", @"d4.wav", @"c4.wav", nil];
+    NSArray* pianoCBass = [[NSArray alloc] initWithObjects: @"c3.wav", @"b2.wav", @"a2.wav", @"g2.wav", @"f2.wav", @"e2.wav", @"d2.wav", @"c2.wav", nil];
     
-    self.pianoGTreble = [[NSArray alloc] initWithObjects: @"g4shorter.wav", @"a4shorter.wav", @"b4shorter.wav", @"c5shorter.wav", @"d5shorter.wav", @"e5shorter.wav", @"f#5shorter.wav", @"g5shorter.wav", nil];
-    self.pianoGBass = [[NSArray alloc] initWithObjects: @"g2shorter.wav", @"a2shorter.wav", @"b2shorter.wav", @"c3shorter.wav", @"d3shorter.wav", @"e3shorter.wav", @"f#3shorter.wav", @"g3shorter.wav", nil];
+    NSArray* pianoGTreble = [[NSArray alloc] initWithObjects: @"g4.wav", @"a4.wav", @"b4.wav", @"c5.wav", @"d5.wav", @"e5.wav", @"f#5.wav", @"g5.wav", nil];
+    NSArray* pianoGBass = [[NSArray alloc] initWithObjects: @"g3.wav", @"f#3.wav", @"e3.wav", @"d3.wav", @"c3.wav", @"b2.wav", @"a2.wav", @"c2.wav", nil];
     
-    self.pianoCMinorTreble = [[NSArray alloc] initWithObjects: @"c4shorter.wav", @"d4shorter.wav", @"eb4shorter.wav", @"f4shorter.wav", @"g4shorter.wav", @"ab4shorter.wav", @"bb4shorter.wav", @"c5shorter.wav", nil];
-    self.pianoCMinorBass = [[NSArray alloc] initWithObjects: @"c2shorter.wav", @"d2shorter.wav", @"eb2shorter.wav", @"f2shorter.wav", @"g2shorter.wav", @"ab2shorter.wav", @"bb2shorter.wav", @"c3shorter.wav", nil];
+    NSArray* pianoCMinorTreble = [[NSArray alloc] initWithObjects: @"c5.wav", @"bb4.wav", @"ab4.wav", @"g4.wav", @"f4.wav", @"eb4.wav", @"d4.wav", @"c4.wav", nil];
+    NSArray* pianoCMinorBass = [[NSArray alloc] initWithObjects: @"c3.wav", @"bb2.wav", @"ab2.wav", @"g2.wav", @"f2.wav", @"eb2.wav", @"d2.wav", @"c2.wav", nil];
+    
+    NSMutableArray* pianoTones = [[NSMutableArray alloc] init];
+    [self.tones addObject:pianoTones];
+    
+    NSMutableArray* trebleTones = [[NSMutableArray alloc] init];
+    [pianoTones addObject:trebleTones];
+    [trebleTones addObject:pianoCTreble];
+    [trebleTones addObject:pianoGTreble];
+    [trebleTones addObject:pianoCMinorTreble];
+    
+    NSMutableArray* bassTones = [[NSMutableArray alloc] init];
+    [pianoTones addObject:bassTones];
+    [bassTones addObject:pianoCBass];
+    [bassTones addObject:pianoGBass];
+    [bassTones addObject:pianoCMinorBass];
 }
 
 -(void)initGuitarTones
@@ -50,6 +66,15 @@
 -(void)initVocalTones
 {
     
+}
+
+-(NSArray *)getTonesWithInstrument:(int)instr AndScale:(int)scale AndFrequency:(int)freq
+{
+    NSMutableArray* instrArr = [self.tones objectAtIndex:instr];
+    NSLog(@"%d", instrArr.count);
+    NSMutableArray* freqArr = [instrArr objectAtIndex:freq];
+    NSLog(@"%d", freqArr.count);
+    return [[[self.tones objectAtIndex:instr] objectAtIndex:freq] objectAtIndex:scale];
 }
 
 @end
