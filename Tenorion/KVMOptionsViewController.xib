@@ -37,7 +37,6 @@
                         <segment title="" image="piano.png"/>
                         <segment title="" image="drum.png"/>
                         <segment title="" image="guitar.png"/>
-                        <segment title="" image="microphone.png"/>
                     </segments>
                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -103,7 +102,6 @@
         <image name="bass.png" width="12" height="13"/>
         <image name="drum.png" width="50" height="37"/>
         <image name="guitar.png" width="20" height="20"/>
-        <image name="microphone.png" width="20" height="20"/>
         <image name="piano.png" width="50" height="37"/>
         <image name="treble.png" width="15" height="24"/>
     </resources>

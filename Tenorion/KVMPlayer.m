@@ -28,7 +28,7 @@
         [self playSwitchBoard];
     } completion:^(BOOL finished){
         [UIView animateWithDuration:0 animations:^{
-            [self performSelector:@selector(startPlayback) withObject:nil afterDelay:2.4];
+            [self performSelector:@selector(startPlayback) withObject:nil afterDelay:2.38];
         }];
     }];
 }
