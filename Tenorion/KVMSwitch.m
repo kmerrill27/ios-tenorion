@@ -26,6 +26,7 @@
 {
     self.offColor = [self.onColor colorWithAlphaComponent:0.3];
     self.isOn = NO;
+    self.currLayerFlag = YES;
     self.backgroundColor = self.offColor;
     self.layer.cornerRadius = self.bounds.size.width / 2.0;
 }

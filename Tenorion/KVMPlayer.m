@@ -50,7 +50,10 @@
     {
         if (currSwitch.isOn)
         {
-            [currSwitch play];
+            if (currSwitch.currLayerFlag)
+            {
+                [currSwitch play];
+            }
             [self.soundManager playSound:currSwitch.toneFile WithVolume:currSwitch.volume];
         }
         else

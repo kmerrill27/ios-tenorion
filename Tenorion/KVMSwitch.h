@@ -12,6 +12,7 @@
 @interface KVMSwitch : UIButton
 
 @property BOOL isOn;
+@property BOOL currLayerFlag;
 @property float volume;
 @property (strong, nonatomic) NSString* toneFile;
 @property (strong, nonatomic) UIColor* onColor;

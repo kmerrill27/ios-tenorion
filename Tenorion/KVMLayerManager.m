@@ -38,6 +38,11 @@
     [self.layers addObject:layer];
     self.currLayerIndex++;
     
+    if (self.currLayerIndex-1 >= 0)
+    {
+        [self setCurrentLayerFlagsAt:self.currLayerIndex-1 To:NO];
+    }
+    
     return layer;
 }
 
@@ -63,6 +68,7 @@
         self.layers = tempLayers;
         self.currLayerIndex = index;
     }
+    [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
 }
 
 - (BOOL)canAddLayer
@@ -87,13 +93,17 @@
 
 - (KVMLayer *)getNextLayer
 {
+    [self setCurrentLayerFlagsAt:self.currLayerIndex To:NO];
     self.currLayerIndex++;
+    [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
     return [self.layers objectAtIndex:self.currLayerIndex];
 }
 
 - (KVMLayer *)getPreviousLayer
 {
+    [self setCurrentLayerFlagsAt:self.currLayerIndex To:NO];
     self.currLayerIndex--;
+    [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
     return [self.layers objectAtIndex:self.currLayerIndex];
 }
 
@@ -105,9 +115,9 @@
 - (NSMutableArray *)getNextColumn
 {
     NSMutableArray* currColumn = [[NSMutableArray alloc] init];
-    for (KVMLayer* layer in self.layers)
+    for (int i = 0; i < self.layers.count; i++)
     {
-        NSMutableArray* layerColumn = [layer getColumn:self.currColumnIndex];
+        NSMutableArray* layerColumn = [[self.layers objectAtIndex:i] getColumn:self.currColumnIndex];
         [currColumn addObjectsFromArray:layerColumn];
     }
     self.currColumnIndex++;
@@ -117,6 +127,18 @@
 - (void)resetColumns
 {
     self.currColumnIndex = 0;
+}
+
+- (void)setCurrentLayerFlagsAt:(int)layerIndex To:(BOOL)isCurrLayer
+{
+    KVMLayer* tempLayer = [self.layers objectAtIndex:layerIndex];
+    for (NSMutableArray* tempColumn in tempLayer.switches)
+    {
+        for (KVMSwitch* tempSwitch in tempColumn)
+        {
+            tempSwitch.currLayerFlag = isCurrLayer;
+        }
+    }
 }
 
 @end
