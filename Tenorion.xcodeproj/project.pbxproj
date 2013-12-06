@@ -54,6 +54,35 @@
 		1773ED0E182DA86F009847EA /* bass.png in Resources */ = {isa = PBXBuildFile; fileRef = 1773ED0D182DA86F009847EA /* bass.png */; };
 		178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341B7182ABD4700ADF751 /* KVMSwitch.m */; };
 		178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 178341C5182B4CBF00ADF751 /* KVMLayer.m */; };
+		178419CE184FC44C00AF177B /* ab2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419CB184FC44C00AF177B /* ab2guitar.wav */; };
+		178419CF184FC44C00AF177B /* bb2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419CC184FC44C00AF177B /* bb2guitar.wav */; };
+		178419D0184FC44C00AF177B /* eb1guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419CD184FC44C00AF177B /* eb1guitar.wav */; };
+		178419D4184FC46700AF177B /* ab3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419D1184FC46700AF177B /* ab3guitar.wav */; };
+		178419D5184FC46700AF177B /* bb3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419D2184FC46700AF177B /* bb3guitar.wav */; };
+		178419D6184FC46700AF177B /* eb2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419D3184FC46700AF177B /* eb2guitar.wav */; };
+		178419DF184FC47C00AF177B /* a3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419D7184FC47C00AF177B /* a3guitar.wav */; };
+		178419E0184FC47C00AF177B /* b3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419D8184FC47C00AF177B /* b3guitar.wav */; };
+		178419E1184FC47C00AF177B /* c2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419D9184FC47C00AF177B /* c2guitar.wav */; };
+		178419E2184FC47C00AF177B /* c3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419DA184FC47C00AF177B /* c3guitar.wav */; };
+		178419E3184FC47C00AF177B /* d2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419DB184FC47C00AF177B /* d2guitar.wav */; };
+		178419E4184FC47C00AF177B /* e3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419DC184FC47C00AF177B /* e3guitar.wav */; };
+		178419E5184FC47C00AF177B /* f3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419DD184FC47C00AF177B /* f3guitar.wav */; };
+		178419E6184FC47C00AF177B /* g3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419DE184FC47C00AF177B /* g3guitar.wav */; };
+		178419ED184FC49900AF177B /* a1guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419E7184FC49900AF177B /* a1guitar.wav */; };
+		178419EE184FC49900AF177B /* b1guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419E8184FC49900AF177B /* b1guitar.wav */; };
+		178419EF184FC49900AF177B /* c1guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419E9184FC49900AF177B /* c1guitar.wav */; };
+		178419F0184FC49900AF177B /* d1guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419EA184FC49900AF177B /* d1guitar.wav */; };
+		178419F1184FC49900AF177B /* f#2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419EB184FC49900AF177B /* f#2guitar.wav */; };
+		178419F2184FC49900AF177B /* g1guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419EC184FC49900AF177B /* g1guitar.wav */; };
+		178419F4184FC4A800AF177B /* f#3guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419F3184FC4A800AF177B /* f#3guitar.wav */; };
+		178419FA184FC5CA00AF177B /* a2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419F5184FC5CA00AF177B /* a2guitar.wav */; };
+		178419FB184FC5CA00AF177B /* b2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419F6184FC5CA00AF177B /* b2guitar.wav */; };
+		178419FC184FC5CA00AF177B /* e2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419F7184FC5CA00AF177B /* e2guitar.wav */; };
+		178419FD184FC5CA00AF177B /* f2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419F8184FC5CA00AF177B /* f2guitar.wav */; };
+		178419FE184FC5CA00AF177B /* g2guitar.wav in Resources */ = {isa = PBXBuildFile; fileRef = 178419F9184FC5CA00AF177B /* g2guitar.wav */; };
+		17841A01184FC80300AF177B /* KVMPianoTones.m in Sources */ = {isa = PBXBuildFile; fileRef = 17841A00184FC80300AF177B /* KVMPianoTones.m */; };
+		17841A04184FCA3000AF177B /* KVMGuitarTones.m in Sources */ = {isa = PBXBuildFile; fileRef = 17841A03184FCA3000AF177B /* KVMGuitarTones.m */; };
+		17841A09184FCBF200AF177B /* KVMDrumTones.m in Sources */ = {isa = PBXBuildFile; fileRef = 17841A08184FCBF200AF177B /* KVMDrumTones.m */; };
 		17A2FC2618309140008515F1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A2FC2518309140008515F1 /* AVFoundation.framework */; };
 		17A2FC2C183091CC008515F1 /* SoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A2FC2B183091CC008515F1 /* SoundManager.m */; };
 		17B4498618260E4E002D31C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17B4498518260E4E002D31C6 /* Foundation.framework */; };
@@ -139,6 +168,39 @@
 		178341BC182AE33000ADF751 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		178341C4182B4CBF00ADF751 /* KVMLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMLayer.h; sourceTree = "<group>"; };
 		178341C5182B4CBF00ADF751 /* KVMLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMLayer.m; sourceTree = "<group>"; };
+		178419CB184FC44C00AF177B /* ab2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ab2guitar.wav; sourceTree = "<group>"; };
+		178419CC184FC44C00AF177B /* bb2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bb2guitar.wav; sourceTree = "<group>"; };
+		178419CD184FC44C00AF177B /* eb1guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eb1guitar.wav; sourceTree = "<group>"; };
+		178419D1184FC46700AF177B /* ab3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ab3guitar.wav; sourceTree = "<group>"; };
+		178419D2184FC46700AF177B /* bb3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bb3guitar.wav; sourceTree = "<group>"; };
+		178419D3184FC46700AF177B /* eb2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = eb2guitar.wav; sourceTree = "<group>"; };
+		178419D7184FC47C00AF177B /* a3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a3guitar.wav; sourceTree = "<group>"; };
+		178419D8184FC47C00AF177B /* b3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = b3guitar.wav; sourceTree = "<group>"; };
+		178419D9184FC47C00AF177B /* c2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c2guitar.wav; sourceTree = "<group>"; };
+		178419DA184FC47C00AF177B /* c3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c3guitar.wav; sourceTree = "<group>"; };
+		178419DB184FC47C00AF177B /* d2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d2guitar.wav; sourceTree = "<group>"; };
+		178419DC184FC47C00AF177B /* e3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = e3guitar.wav; sourceTree = "<group>"; };
+		178419DD184FC47C00AF177B /* f3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f3guitar.wav; sourceTree = "<group>"; };
+		178419DE184FC47C00AF177B /* g3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = g3guitar.wav; sourceTree = "<group>"; };
+		178419E7184FC49900AF177B /* a1guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a1guitar.wav; sourceTree = "<group>"; };
+		178419E8184FC49900AF177B /* b1guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = b1guitar.wav; sourceTree = "<group>"; };
+		178419E9184FC49900AF177B /* c1guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = c1guitar.wav; sourceTree = "<group>"; };
+		178419EA184FC49900AF177B /* d1guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d1guitar.wav; sourceTree = "<group>"; };
+		178419EB184FC49900AF177B /* f#2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "f#2guitar.wav"; sourceTree = "<group>"; };
+		178419EC184FC49900AF177B /* g1guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = g1guitar.wav; sourceTree = "<group>"; };
+		178419F3184FC4A800AF177B /* f#3guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "f#3guitar.wav"; sourceTree = "<group>"; };
+		178419F5184FC5CA00AF177B /* a2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a2guitar.wav; sourceTree = "<group>"; };
+		178419F6184FC5CA00AF177B /* b2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = b2guitar.wav; sourceTree = "<group>"; };
+		178419F7184FC5CA00AF177B /* e2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = e2guitar.wav; sourceTree = "<group>"; };
+		178419F8184FC5CA00AF177B /* f2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = f2guitar.wav; sourceTree = "<group>"; };
+		178419F9184FC5CA00AF177B /* g2guitar.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = g2guitar.wav; sourceTree = "<group>"; };
+		178419FF184FC80300AF177B /* KVMPianoTones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMPianoTones.h; sourceTree = "<group>"; };
+		17841A00184FC80300AF177B /* KVMPianoTones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMPianoTones.m; sourceTree = "<group>"; };
+		17841A02184FCA3000AF177B /* KVMGuitarTones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMGuitarTones.h; sourceTree = "<group>"; };
+		17841A03184FCA3000AF177B /* KVMGuitarTones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMGuitarTones.m; sourceTree = "<group>"; };
+		17841A06184FCADA00AF177B /* KVMTones.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KVMTones.h; sourceTree = "<group>"; };
+		17841A07184FCBF200AF177B /* KVMDrumTones.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMDrumTones.h; sourceTree = "<group>"; };
+		17841A08184FCBF200AF177B /* KVMDrumTones.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMDrumTones.m; sourceTree = "<group>"; };
 		17A2FC2518309140008515F1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		17A2FC2A183091CC008515F1 /* SoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundManager.h; sourceTree = "<group>"; };
 		17A2FC2B183091CC008515F1 /* SoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundManager.m; sourceTree = "<group>"; };
@@ -248,6 +310,64 @@
 			name = drum;
 			sourceTree = "<group>";
 		};
+		17188F0E184EEA2500F444C2 /* guitar */ = {
+			isa = PBXGroup;
+			children = (
+				178419F5184FC5CA00AF177B /* a2guitar.wav */,
+				178419F6184FC5CA00AF177B /* b2guitar.wav */,
+				178419F7184FC5CA00AF177B /* e2guitar.wav */,
+				178419F8184FC5CA00AF177B /* f2guitar.wav */,
+				178419F9184FC5CA00AF177B /* g2guitar.wav */,
+				178419F3184FC4A800AF177B /* f#3guitar.wav */,
+				178419E7184FC49900AF177B /* a1guitar.wav */,
+				178419E8184FC49900AF177B /* b1guitar.wav */,
+				178419E9184FC49900AF177B /* c1guitar.wav */,
+				178419EA184FC49900AF177B /* d1guitar.wav */,
+				178419EB184FC49900AF177B /* f#2guitar.wav */,
+				178419EC184FC49900AF177B /* g1guitar.wav */,
+				178419D7184FC47C00AF177B /* a3guitar.wav */,
+				178419D8184FC47C00AF177B /* b3guitar.wav */,
+				178419D9184FC47C00AF177B /* c2guitar.wav */,
+				178419DA184FC47C00AF177B /* c3guitar.wav */,
+				178419DB184FC47C00AF177B /* d2guitar.wav */,
+				178419DC184FC47C00AF177B /* e3guitar.wav */,
+				178419DD184FC47C00AF177B /* f3guitar.wav */,
+				178419DE184FC47C00AF177B /* g3guitar.wav */,
+				178419D1184FC46700AF177B /* ab3guitar.wav */,
+				178419D2184FC46700AF177B /* bb3guitar.wav */,
+				178419D3184FC46700AF177B /* eb2guitar.wav */,
+				178419CB184FC44C00AF177B /* ab2guitar.wav */,
+				178419CC184FC44C00AF177B /* bb2guitar.wav */,
+				178419CD184FC44C00AF177B /* eb1guitar.wav */,
+			);
+			name = guitar;
+			sourceTree = "<group>";
+		};
+		17841A0A184FCD3D00AF177B /* ToneGroups */ = {
+			isa = PBXGroup;
+			children = (
+				17188ECD184E9B4900F444C2 /* KVMToneGroups.h */,
+				17188ECE184E9B4900F444C2 /* KVMToneGroups.m */,
+				178419FF184FC80300AF177B /* KVMPianoTones.h */,
+				17841A00184FC80300AF177B /* KVMPianoTones.m */,
+				17841A02184FCA3000AF177B /* KVMGuitarTones.h */,
+				17841A03184FCA3000AF177B /* KVMGuitarTones.m */,
+				17841A06184FCADA00AF177B /* KVMTones.h */,
+				17841A07184FCBF200AF177B /* KVMDrumTones.h */,
+				17841A08184FCBF200AF177B /* KVMDrumTones.m */,
+			);
+			name = ToneGroups;
+			sourceTree = "<group>";
+		};
+		17841A0B184FCD4D00AF177B /* static */ = {
+			isa = PBXGroup;
+			children = (
+				17A2FC2418308DEB008515F1 /* tones */,
+				17A2FC2318308DD6008515F1 /* images */,
+			);
+			name = static;
+			sourceTree = "<group>";
+		};
 		17A2FC2318308DD6008515F1 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +385,7 @@
 		17A2FC2418308DEB008515F1 /* tones */ = {
 			isa = PBXGroup;
 			children = (
+				17188F0E184EEA2500F444C2 /* guitar */,
 				17188EFD184ED7C500F444C2 /* drum */,
 				17188EFC184ED18900F444C2 /* piano */,
 			);
@@ -306,8 +427,8 @@
 		17B4498B18260E4E002D31C6 /* Tenorion */ = {
 			isa = PBXGroup;
 			children = (
-				17A2FC2418308DEB008515F1 /* tones */,
-				17A2FC2318308DD6008515F1 /* images */,
+				17841A0B184FCD4D00AF177B /* static */,
+				17841A0A184FCD3D00AF177B /* ToneGroups */,
 				17B449B418260EE2002D31C6 /* KVMMainViewController.h */,
 				17B449B518260EE2002D31C6 /* KVMMainViewController.m */,
 				17B449B618260EE2002D31C6 /* KVMMainViewController.xib */,
@@ -328,8 +449,6 @@
 				17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */,
 				17A2FC2A183091CC008515F1 /* SoundManager.h */,
 				17A2FC2B183091CC008515F1 /* SoundManager.m */,
-				17188ECD184E9B4900F444C2 /* KVMToneGroups.h */,
-				17188ECE184E9B4900F444C2 /* KVMToneGroups.m */,
 			);
 			path = Tenorion;
 			sourceTree = "<group>";
@@ -442,32 +561,53 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178419CE184FC44C00AF177B /* ab2guitar.wav in Resources */,
 				1773ED08182DA248009847EA /* guitar.png in Resources */,
 				17188EBE184E9A0000F444C2 /* g4.wav in Resources */,
 				17B449B818260EE2002D31C6 /* KVMMainViewController.xib in Resources */,
 				1773ED09182DA248009847EA /* microphone.png in Resources */,
+				178419D0184FC44C00AF177B /* eb1guitar.wav in Resources */,
 				17188EC7184E9B0100F444C2 /* b4.wav in Resources */,
+				178419E1184FC47C00AF177B /* c2guitar.wav in Resources */,
 				17188EDE184EAB5200F444C2 /* f2.wav in Resources */,
+				178419DF184FC47C00AF177B /* a3guitar.wav in Resources */,
 				17188EE9184ED0FD00F444C2 /* ab2.wav in Resources */,
+				178419E0184FC47C00AF177B /* b3guitar.wav in Resources */,
+				178419EE184FC49900AF177B /* b1guitar.wav in Resources */,
 				17188ED9184EAB5200F444C2 /* b2.wav in Resources */,
 				17188EF2184ED10D00F444C2 /* f#3.wav in Resources */,
 				17188EF0184ED10D00F444C2 /* d3.wav in Resources */,
+				178419CF184FC44C00AF177B /* bb2guitar.wav in Resources */,
 				17188F08184ED7DF00F444C2 /* kick.wav in Resources */,
+				178419D4184FC46700AF177B /* ab3guitar.wav in Resources */,
+				178419F2184FC49900AF177B /* g1guitar.wav in Resources */,
+				178419FA184FC5CA00AF177B /* a2guitar.wav in Resources */,
 				17188EE5184ED0E900F444C2 /* eb4.wav in Resources */,
 				17188EF9184ED12A00F444C2 /* e5.wav in Resources */,
 				17188EC8184E9B0100F444C2 /* c4.wav in Resources */,
 				17B4499018260E4E002D31C6 /* InfoPlist.strings in Resources */,
 				17188EFA184ED12A00F444C2 /* f#5.wav in Resources */,
+				178419FD184FC5CA00AF177B /* f2guitar.wav in Resources */,
+				178419D6184FC46700AF177B /* eb2guitar.wav in Resources */,
+				178419FC184FC5CA00AF177B /* e2guitar.wav in Resources */,
+				178419E6184FC47C00AF177B /* g3guitar.wav in Resources */,
 				17CA69DD182CA4A500D85596 /* arrow.png in Resources */,
 				17188EC9184E9B0100F444C2 /* c5.wav in Resources */,
+				178419E3184FC47C00AF177B /* d2guitar.wav in Resources */,
 				17188EC6184E9B0100F444C2 /* a4.wav in Resources */,
 				17188F06184ED7DF00F444C2 /* cymhigh.wav in Resources */,
 				17188EEA184ED0FD00F444C2 /* bb2.wav in Resources */,
+				178419F1184FC49900AF177B /* f#2guitar.wav in Resources */,
+				178419FE184FC5CA00AF177B /* g2guitar.wav in Resources */,
 				17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */,
 				1773ED0A182DA248009847EA /* piano.png in Resources */,
+				178419EF184FC49900AF177B /* c1guitar.wav in Resources */,
 				17188EDD184EAB5200F444C2 /* e2.wav in Resources */,
+				178419E5184FC47C00AF177B /* f3guitar.wav in Resources */,
+				178419E4184FC47C00AF177B /* e3guitar.wav in Resources */,
 				17188F09184ED7DF00F444C2 /* rim.wav in Resources */,
 				1773ED0E182DA86F009847EA /* bass.png in Resources */,
+				178419ED184FC49900AF177B /* a1guitar.wav in Resources */,
 				17188EF3184ED10D00F444C2 /* g3.wav in Resources */,
 				17188ECC184E9B0100F444C2 /* f4.wav in Resources */,
 				1773ED0C182DA858009847EA /* treble.png in Resources */,
@@ -477,11 +617,16 @@
 				17188EE3184ED0E900F444C2 /* ab4.wav in Resources */,
 				17188EDB184EAB5200F444C2 /* c3.wav in Resources */,
 				17188ECA184E9B0100F444C2 /* d4.wav in Resources */,
+				178419F0184FC49900AF177B /* d1guitar.wav in Resources */,
 				17188EFB184ED12A00F444C2 /* g5.wav in Resources */,
 				17188F0B184ED7DF00F444C2 /* stick.wav in Resources */,
+				178419FB184FC5CA00AF177B /* b2guitar.wav in Resources */,
+				178419F4184FC4A800AF177B /* f#3guitar.wav in Resources */,
 				17188F0D184ED7DF00F444C2 /* tommed.wav in Resources */,
+				178419E2184FC47C00AF177B /* c3guitar.wav in Resources */,
 				17188F0A184ED7DF00F444C2 /* snare.wav in Resources */,
 				17188F0C184ED7DF00F444C2 /* tomhi.wav in Resources */,
+				178419D5184FC46700AF177B /* bb3guitar.wav in Resources */,
 				17188EF1184ED10D00F444C2 /* e3.wav in Resources */,
 				17B4499818260E4E002D31C6 /* Images.xcassets in Resources */,
 				17188EE4184ED0E900F444C2 /* bb4.wav in Resources */,
@@ -511,11 +656,14 @@
 			files = (
 				178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */,
 				17CA69CC182C3AC500D85596 /* KVMPlayer.m in Sources */,
+				17841A09184FCBF200AF177B /* KVMDrumTones.m in Sources */,
+				17841A04184FCA3000AF177B /* KVMGuitarTones.m in Sources */,
 				17CA69E1182CBD1900D85596 /* KVMOptionsViewController.m in Sources */,
 				17CA69CF182C3B5600D85596 /* KVMLayerManager.m in Sources */,
 				178341C6182B4CBF00ADF751 /* KVMLayer.m in Sources */,
 				17B4499218260E4E002D31C6 /* main.m in Sources */,
 				17188ECF184E9B4900F444C2 /* KVMToneGroups.m in Sources */,
+				17841A01184FC80300AF177B /* KVMPianoTones.m in Sources */,
 				17B4499618260E4E002D31C6 /* KVMAppDelegate.m in Sources */,
 				17B449B718260EE2002D31C6 /* KVMMainViewController.m in Sources */,
 				17A2FC2C183091CC008515F1 /* SoundManager.m in Sources */,

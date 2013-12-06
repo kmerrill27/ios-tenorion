@@ -14,13 +14,13 @@
 
 @implementation KVMOptionsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target AndToneGroups:(KVMToneGroups *)toneGroups
+- (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
         self.themeColor = color;
         self.target = target;
-        self.toneGroups = toneGroups;
+        self.toneGroups = [[KVMToneGroups alloc] init];
         self.isBeingDismissed = NO;
         self.scale = self.scaleControl.selectedSegmentIndex;
         self.frequency = self.frequencyControl.selectedSegmentIndex;
@@ -106,7 +106,6 @@
 
 - (NSArray *)getTones
 {
-    NSLog(@"%d", self.instrument);
     return [self.toneGroups getTonesWithInstrument:self.instrument AndScale:self.scale AndFrequency:self.frequency];
 }
 

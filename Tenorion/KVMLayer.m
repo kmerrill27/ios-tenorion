@@ -19,8 +19,7 @@
         self.switchColor = color;
         self.target = target;
         self.opaque = NO;
-        self.toneGroups = [[KVMToneGroups alloc] init];
-        self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:self.switchColor AndTarget:self AndToneGroups:self.toneGroups];
+        self.optionsController = [[KVMOptionsViewController alloc] initWithNibName:@"KVMOptionsViewController" WithColor:self.switchColor AndTarget:self];
         [self drawSwitches];
     }
     return self;

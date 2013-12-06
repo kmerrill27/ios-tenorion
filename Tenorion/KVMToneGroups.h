@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KVMTones.h"
+#import "KVMPianoTones.h"
+#import "KVMGuitarTones.h"
+#import "KVMDrumTones.h"
 
 @interface KVMToneGroups : NSObject
 
