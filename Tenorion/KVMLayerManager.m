@@ -91,19 +91,25 @@
     return self.currColumnIndex < self.layerSize;
 }
 
-- (KVMLayer *)getNextLayer
+- (KVMLayer *)getNextLayerToPan:(BOOL)willPan
 {
-    [self setCurrentLayerFlagsAt:self.currLayerIndex To:NO];
     self.currLayerIndex++;
-    [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
+    if (willPan)
+    {
+        [self setCurrentLayerFlagsAt:self.currLayerIndex-1 To:NO];
+        [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
+    }
     return [self.layers objectAtIndex:self.currLayerIndex];
 }
 
-- (KVMLayer *)getPreviousLayer
+- (KVMLayer *)getPreviousLayerToPan:(BOOL)willPan
 {
-    [self setCurrentLayerFlagsAt:self.currLayerIndex To:NO];
     self.currLayerIndex--;
-    [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
+    if (willPan)
+    {
+        [self setCurrentLayerFlagsAt:self.currLayerIndex+1 To:NO];
+        [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
+    }
     return [self.layers objectAtIndex:self.currLayerIndex];
 }
 
