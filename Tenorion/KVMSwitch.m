@@ -43,7 +43,7 @@
     }
 }
 
-- (void)play
+- (void)playOn:(UIView *)view
 {
     int originalSize = self.bounds.size.width;
     [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
@@ -53,6 +53,10 @@
             [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
         } completion:nil];
     }];
+    
+    CGPoint center = [self.superview convertPoint:self.center toView:view];
+    KVMRipple* ripple = [[KVMRipple alloc] initWithFrame:view.frame AtCenterX:center.x AndY:center.y WithSize:self.bounds.size.width];
+    [view addSubview:ripple];
 }
 
 - (void)highlight

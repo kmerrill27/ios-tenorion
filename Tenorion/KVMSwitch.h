@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "SoundManager.h"
+#import "KVMRipple.h"
 
 @interface KVMSwitch : UIButton
 
@@ -20,7 +21,7 @@
 
 - (id)initWithFrame:(CGRect)frame WithTone:(NSString *)toneFile AndColor:(UIColor *)color;
 - (void)toggle;
-- (void)play;
+- (void)playOn:(UIView *)view;
 - (void)highlight;
 
 @end

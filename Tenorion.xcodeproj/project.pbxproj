@@ -104,6 +104,7 @@
 		17CA69DD182CA4A500D85596 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CA69DC182CA4A500D85596 /* arrow.png */; };
 		17CA69E1182CBD1900D85596 /* KVMOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */; };
 		17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */; };
+		17D0B6E3185299C700BEA0E2 /* KVMRipple.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D0B6E2185299C700BEA0E2 /* KVMRipple.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -231,6 +232,8 @@
 		17CA69DE182CBD1900D85596 /* KVMOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMOptionsViewController.h; sourceTree = "<group>"; };
 		17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMOptionsViewController.m; sourceTree = "<group>"; };
 		17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVMOptionsViewController.xib; sourceTree = "<group>"; };
+		17D0B6E1185299C700BEA0E2 /* KVMRipple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMRipple.h; sourceTree = "<group>"; };
+		17D0B6E2185299C700BEA0E2 /* KVMRipple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMRipple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +452,8 @@
 				17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */,
 				17A2FC2A183091CC008515F1 /* SoundManager.h */,
 				17A2FC2B183091CC008515F1 /* SoundManager.m */,
+				17D0B6E1185299C700BEA0E2 /* KVMRipple.h */,
+				17D0B6E2185299C700BEA0E2 /* KVMRipple.m */,
 			);
 			path = Tenorion;
 			sourceTree = "<group>";
@@ -654,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D0B6E3185299C700BEA0E2 /* KVMRipple.m in Sources */,
 				178341B8182ABD4700ADF751 /* KVMSwitch.m in Sources */,
 				17CA69CC182C3AC500D85596 /* KVMPlayer.m in Sources */,
 				17841A09184FCBF200AF177B /* KVMDrumTones.m in Sources */,

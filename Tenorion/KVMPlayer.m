@@ -52,7 +52,8 @@
         {
             if (currSwitch.currLayerFlag)
             {
-                [currSwitch play];
+                UIViewController* targetController = self.layerManager.target;
+                [currSwitch playOn:targetController.view];
             }
             [self.soundManager playSound:currSwitch.toneFile WithVolume:currSwitch.volume];
         }
