@@ -53,10 +53,9 @@
             [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
         } completion:nil];
     }];
-    
+   
     CGPoint center = [self.superview convertPoint:self.center toView:view];
-    KVMRipple* ripple = [[KVMRipple alloc] initWithFrame:view.frame AtCenterX:center.x AndY:center.y WithSize:self.bounds.size.width];
-    [view addSubview:ripple];
+    [self rippleOnView:view WithCenter:center AndSize:originalSize];
 }
 
 - (void)highlight
@@ -75,6 +74,21 @@
             }
         } completion:nil];
     }];
+}
+
+-(void)rippleOnView:(UIView *)view WithCenter:(CGPoint)center AndSize:(int)size
+{
+    if (self.isOn && self.currLayerFlag && size < 300)
+    {
+        [UIView animateWithDuration:0.06 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            self.ripple = [[KVMRipple alloc] initWithFrame:view.frame AtCenterX:center.x AndY:center.y WithSize:size AndColor:self.onColor];
+            [view addSubview:self.ripple];
+        } completion:^(BOOL finished){
+            int newSize = self.ripple.size + 30;
+            [self.ripple removeFromSuperview];
+            [self rippleOnView:view WithCenter:center AndSize:newSize];
+        }];
+    }
 }
 
 @end

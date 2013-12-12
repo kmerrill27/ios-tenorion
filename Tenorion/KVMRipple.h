@@ -13,7 +13,8 @@
 @property int x;
 @property int y;
 @property int size;
+@property (strong, nonatomic) UIColor* color;
 
-- (id)initWithFrame:(CGRect)frame AtCenterX:(int)x AndY:(int)y WithSize:(int)size;
+- (id)initWithFrame:(CGRect)frame AtCenterX:(int)x AndY:(int)y WithSize:(int)size AndColor:(UIColor *)color;
 
 @end

@@ -15,6 +15,7 @@
 @property BOOL isOn;
 @property BOOL currLayerFlag;
 @property float volume;
+@property KVMRipple* ripple;
 @property (strong, nonatomic) NSString* toneFile;
 @property (strong, nonatomic) UIColor* onColor;
 @property (strong, nonatomic) UIColor* offColor;

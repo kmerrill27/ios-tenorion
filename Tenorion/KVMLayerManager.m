@@ -49,8 +49,10 @@
 - (void)deleteLayerAtIndex:(int)index IsLastLayer:(BOOL)isLastLayer
 {
     KVMLayer* layerToDelete = [self.layers objectAtIndex:index];
+    [self setLayerOff:layerToDelete];
     [self.colorsStack addObject:[layerToDelete getColor]];
     [layerToDelete removeFromSuperview];
+    [self setCurrentLayerFlagsAt:index To:NO];
     [self.layers removeObjectAtIndex:index];
     
     if (isLastLayer)
@@ -68,7 +70,11 @@
         self.layers = tempLayers;
         self.currLayerIndex = index;
     }
-    [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
+    
+    if (self.currLayerIndex >= 0)
+    {
+        [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
+    }
 }
 
 - (BOOL)canAddLayer
@@ -133,6 +139,17 @@
 - (void)resetColumns
 {
     self.currColumnIndex = 0;
+}
+
+- (void)setLayerOff:(KVMLayer *)layer
+{
+    for (NSMutableArray* tempColumn in layer.switches)
+    {
+        for (KVMSwitch* tempSwitch in tempColumn)
+        {
+            tempSwitch.isOn = NO;
+        }
+    }
 }
 
 - (void)setCurrentLayerFlagsAt:(int)layerIndex To:(BOOL)isCurrLayer
