@@ -72,7 +72,7 @@
         {
             [tempLayers addObject:layer];
         }
-    
+        
         self.layers = tempLayers;
         self.currLayerIndex = index;
     }

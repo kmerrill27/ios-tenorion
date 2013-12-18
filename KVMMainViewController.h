@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "KVMLayerManager.h"
 #import "KVMPlayer.h"
 
