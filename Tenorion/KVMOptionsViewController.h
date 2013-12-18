@@ -32,7 +32,6 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil WithColor:(UIColor *)color AndTarget:(id)target;
 - (void)setDismissAction:(SEL)disAction AndDeleteAction:(SEL)delAction AndVolumeAction:(SEL)volAction AndTonesAction:(SEL)tonesAction;
-- (void)finishedDismissal;
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer;
 - (IBAction)didChangeVolume:(UISlider *)sender;
 - (IBAction)didChangeInstrument:(UISegmentedControl *)sender;

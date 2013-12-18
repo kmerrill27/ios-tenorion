@@ -25,27 +25,16 @@
     return self;
 }
 
+/**
+ * Method must be called from delegate at setup time
+ **/
 - (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction
 {
+    // Set actions to be performed when layer is deleted or optionsController is dismissed
     self.dismissAction = dismissAction;
     self.deleteAction = deleteAction;
     
     [self.optionsController setDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteLayer) AndVolumeAction:@selector(setVolume:) AndTonesAction:@selector(setTones:)];
-}
-
-- (KVMOptionsViewController *)getOptionsController
-{
-    return self.optionsController;
-}
-
-- (NSMutableArray *)getColumn:(int)columnIndex
-{
-    return [self.switches objectAtIndex:columnIndex];
-}
-
-- (UIColor *)getColor
-{
-    return self.switchColor;
 }
 
 - (void)didPressSwitch:(KVMSwitch*)pressedSwitch
@@ -60,6 +49,7 @@
     
     NSArray* startingTones = [self.optionsController getTones];
 
+    // Draw size by size grid of switches
     for(int row = 0; row < self.size; row++)
     {
         NSMutableArray* switchColumn = [[NSMutableArray alloc] init];
@@ -77,6 +67,7 @@
 
 - (void)setVolume:(NSNumber *)volume
 {
+    // Adjust volume for all switches in layer
     for (NSMutableArray* switchColumn in self.switches)
     {
         for (KVMSwitch* currSwitch in switchColumn)
@@ -88,6 +79,7 @@
 
 - (void)setTones:(NSArray *)tones
 {
+    // Set corresponding tone for each switch
     for (int row = 0; row < self.size; row++)
     {
         NSMutableArray* currColumn = [self.switches objectAtIndex:row];

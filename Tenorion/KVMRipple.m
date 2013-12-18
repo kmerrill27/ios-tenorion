@@ -38,6 +38,7 @@
 
 - (UIColor *)changeAlphaOf:(UIColor *)color To:(CGFloat)newAlpha
 {
+    // White has no constituent RGB values, so set alpha separately
     if (color == [UIColor whiteColor])
     {
         return [UIColor colorWithWhite:1.0 alpha:newAlpha];

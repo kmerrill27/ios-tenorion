@@ -68,7 +68,7 @@
                         <action selector="didChangeFrequency:" destination="-1" eventType="valueChanged" id="YMw-qv-d1r"/>
                     </connections>
                 </segmentedControl>
-                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jeb-hE-IQu">
+                <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jeb-hE-IQu">
                     <rect key="frame" x="147" y="78" width="118" height="34"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <connections>

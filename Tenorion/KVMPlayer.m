@@ -24,6 +24,7 @@
 
 - (void)startPlayback
 {
+    // Continuous animation loop for playing Tenori-on
     [UIView animateWithDuration:0 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         [self playSwitchBoard];
     }  completion:^(BOOL finished){
@@ -39,11 +40,14 @@
         [self performSelector:@selector(playSwitchColumn:) withObject:[self.layerManager getNextColumn] afterDelay:0.3*i];
         i++;
     }
+    
+    // Set state back to first column for next playback
     [self.layerManager resetColumns];
 }
 
 - (void)playSwitchColumn:(NSMutableArray *)switchColumn
 {
+    // Play all switches on all layers in current column
     for (KVMSwitch* currSwitch in switchColumn)
     {
         UIViewController* targetController = self.layerManager.target;

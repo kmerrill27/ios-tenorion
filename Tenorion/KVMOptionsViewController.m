@@ -29,17 +29,15 @@
     return self;
 }
 
+/**
+ * Method must be called at setup to indicate actions to be taken on layer in response to optionsController
+ **/
 - (void)setDismissAction:(SEL)disAction AndDeleteAction:(SEL)delAction AndVolumeAction:(SEL)volAction AndTonesAction:(SEL)tonesAction
 {
     self.dismissAction = disAction;
     self.deleteAction = delAction;
     self.volumeAction = volAction;
     self.tonesAction = tonesAction;
-}
-
-- (void)finishedDismissal
-{
-    self.isBeingDismissed = NO;
 }
 
 - (IBAction)didPan:(UIPanGestureRecognizer *)recognizer
@@ -67,8 +65,10 @@
 
 - (IBAction)didChangeInstrument:(UISegmentedControl *)sender
 {
+    // Piano = 0, Drums = 1, Guitar = 2
     if (sender.selectedSegmentIndex == 1)
     {
+        // Hide other controls if user selects drums - no scales or frequencies available
         [self fadeElement:self.scaleControl InDirection:YES];
         [self fadeElement:self.frequencyControl InDirection:YES];
     }
@@ -84,23 +84,21 @@
 
 - (IBAction)didChangeScale:(UISegmentedControl *)sender
 {
+    // C major = 0, G major = 1, C minor = 2
     self.scale = sender.selectedSegmentIndex;
     [self.target performSelector:self.tonesAction withObject:[self getTones] afterDelay:0.0];
 }
 
 - (IBAction)didChangeFrequency:(UISegmentedControl *)sender
 {
+    // Treble = 0, Bass = 0
     self.frequency = sender.selectedSegmentIndex;
     [self.target performSelector:self.tonesAction withObject:[self getTones] afterDelay:0.0];
 }
 
 - (void)fadeElement:(UISegmentedControl *)control InDirection:(BOOL)inOrOut
 {
-    [UIView transitionWithView:control
-                      duration:0.3
-                       options:UIViewAnimationOptionTransitionCrossDissolve
-                    animations:NULL
-                    completion:NULL];
+    [UIView transitionWithView:control duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:NULL completion:NULL];
     control.hidden = inOrOut;
 }
 
@@ -113,6 +111,7 @@
 {
     [super viewDidLoad];
     
+    // Set volume slider color to layer color
     self.volumeSlider.minimumTrackTintColor = self.themeColor;
 }
 

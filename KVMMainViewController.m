@@ -37,11 +37,13 @@
     
     if (CGRectContainsPoint(self.arrowView.frame, location))
     {
+        // Upward pan presents option controller
         [recognizer setEnabled:NO];
         [self panOptions:velocity];
     }
     else if (CGRectContainsPoint(self.switchBoardView.frame, location))
     {
+        // Side pan moves between layers
         [self panLayer:velocity];
     }
 }
@@ -84,7 +86,7 @@
     KVMLayer* previousLayer = [self.layerManager getPreviousLayerToPan:YES];
     [self.switchBoardView bringSubviewToFront:previousLayer];
     
-    [self tintElements:[previousLayer getColor]];
+    [self tintElements:previousLayer.switchColor];
     
     self.layerControl.selectedSegmentIndex = self.layerControl.selectedSegmentIndex - 1;
 }
@@ -94,7 +96,7 @@
     KVMLayer* nextLayer = [self.layerManager getNextLayerToPan:YES];
     [self.switchBoardView bringSubviewToFront:nextLayer];
     
-    [self tintElements:[nextLayer getColor]];
+    [self tintElements:nextLayer.switchColor];
     
     self.layerControl.selectedSegmentIndex = self.layerControl.selectedSegmentIndex + 1;
 }
@@ -105,8 +107,9 @@
     [layer setupOptionsControllerWithDismissAction:@selector(dismissOptionsController) AndDeleteAction:@selector(deleteCurrentLayer)];
     [self.switchBoardView addSubview:layer];
     
-    [self tintElements:[layer getColor]];
+    [self tintElements:layer.switchColor];
     
+    // Update layer segment control
     int numLayers = [self.layerControl numberOfSegments];
     [self.layerControl insertSegmentWithTitle:@"" atIndex:numLayers animated:YES];
     self.layerControl.selectedSegmentIndex = numLayers;
@@ -127,13 +130,15 @@
         [self deleteInBetweenLayer:layerToDelete];
     }
     
-    [self tintElements:[[self.layerManager getCurrentLayer] getColor]];
+    [self tintElements:[self.layerManager getCurrentLayer].switchColor];
 }
 
 - (void)deleteInBetweenLayer:(int)layerToDelete
 {
     int currIndex = 0;
     int numSegments = [self.layerControl numberOfSegments];
+    
+    // Move all layers left one to keep segment control and layer manager consistent
     for (int i = 0; i < numSegments; i++)
     {
         if (i != layerToDelete)
@@ -153,6 +158,7 @@
     [self.layerControl removeSegmentAtIndex:layerToDelete animated:YES];
     if ([self.layerControl numberOfSegments] == 0)
     {
+        // If only layer, re-add layer (must always have at least one layer)
         [self addNewLayer];
     }
     else
@@ -163,6 +169,7 @@
 
 - (void)tintElements:(UIColor *)color
 {
+    // Change color of arrow and segment control graphic
     self.layerControl.tintColor = color;
     UIImage* imageForRendering = [self.arrowView.image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.arrowView.image = imageForRendering;
@@ -174,7 +181,7 @@
     CGRect mainrect = self.view.bounds;
     CGRect newRect = CGRectMake(0, mainrect.size.height, mainrect.size.width, mainrect.size.height);
     
-    KVMOptionsViewController* currOptionsController = [[self.layerManager getCurrentLayer] getOptionsController];
+    KVMOptionsViewController* currOptionsController = [self.layerManager getCurrentLayer].optionsController;
     [self.view addSubview:currOptionsController.view];
     currOptionsController.view.frame = newRect;
     
@@ -188,12 +195,12 @@
     CGRect mainrect = self.view.bounds;
     CGRect newRect = CGRectMake(0, mainrect.size.height, mainrect.size.width, 0);
     
-    KVMOptionsViewController* currOptionsController = [[self.layerManager getCurrentLayer] getOptionsController];
+    KVMOptionsViewController* currOptionsController = [self.layerManager getCurrentLayer].optionsController;
     [UIView animateWithDuration:0.5 animations:^{
         currOptionsController.view.frame = newRect;
     } completion:^(BOOL finished) {
         [currOptionsController.view removeFromSuperview];
-        [currOptionsController finishedDismissal];
+        [currOptionsController setIsBeingDismissed:NO];
         [self.panRecognizer setEnabled:YES];
     }];
 }
@@ -204,6 +211,8 @@
     
     [self.layerControl removeAllSegments];
     [self addNewLayer];
+    
+    // Start main animation loop
     [self.player startPlayback];
 }
 

@@ -16,7 +16,7 @@
     if (self) {
         self.toneFile = toneFile;
         self.onColor = color;
-        self.volume = 1.0f;
+        self.volume = 0.5f;
         [self setupSwitch];
     }
     return self;
@@ -53,6 +53,7 @@
         
         if (self.currLayerFlag)
         {
+            // If switch is on current layer, grow and ripple
             [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
             [self rippleOnView:view WithCenter:center AndSize:originalSize];
             [soundManager playSound:self.toneFile WithVolume:self.volume];
@@ -63,6 +64,7 @@
         }
         else
         {
+            // If switch is part of background layer, grow less and don't ripple
             [self setBounds:CGRectMake(0, 0, originalSize+0.75, originalSize+0.75)];
             [soundManager playSound:self.toneFile WithVolume:self.volume];
             
@@ -73,6 +75,7 @@
     }
     else
     {
+        // If switch is off, temporarliy lighten its color to indicate current column
         [self highlight];
     }
 }
@@ -83,6 +86,7 @@
         self.backgroundColor = [self.offColor colorWithAlphaComponent:0.5];
     } completion:^(BOOL finished){
         [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            // Re-check if on or off in case user toggled switch while it was animating
             self.backgroundColor = self.isOn ? self.onColor : self.offColor;
         } completion:nil];
     }];
@@ -95,6 +99,8 @@
         [view addSubview:self.ripple];
     } completion:^(BOOL finished){
         [self.ripple removeFromSuperview];
+        
+        // Flash second slightly larger ripple
         [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
             self.ripple = [[KVMRipple alloc] initWithFrame:view.frame AtCenterX:center.x AndY:center.y WithSize:size+10 AndColor:self.onColor];
             [view addSubview:self.ripple];

@@ -23,9 +23,6 @@
 @property (strong, nonatomic) KVMOptionsViewController* optionsController;
 
 - (id)initWithFrame:(CGRect)frame AndColumns:(int)size AndColor:(UIColor *)color AndTarget:(id)target;
-- (NSMutableArray *)getColumn:(int)columnIndex;
-- (UIColor *)getColor;
-- (KVMOptionsViewController *)getOptionsController;
 - (void)setupOptionsControllerWithDismissAction:(SEL)dismissAction AndDeleteAction:(SEL)deleteAction;
 - (void)setVolume:(NSNumber *)volume;
 - (void)setTones:(NSArray *)tones;

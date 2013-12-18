@@ -38,6 +38,7 @@
     [self.layers addObject:layer];
     self.currLayerIndex++;
     
+    // Set added layer as current layer - if only one layer, will be set to current by default
     if (self.currLayerIndex-1 >= 0)
     {
         [self setCurrentLayerFlagsAt:self.currLayerIndex-1 To:NO];
@@ -48,11 +49,15 @@
 
 - (void)deleteLayerAtIndex:(int)index IsLastLayer:(BOOL)isLastLayer
 {
+    // In case garbage collection not immediate, turn all switches in layer off
+    // and set current layer flags to false
     KVMLayer* layerToDelete = [self.layers objectAtIndex:index];
     [self setLayerOff:layerToDelete];
-    [self.colorsStack addObject:[layerToDelete getColor]];
-    [layerToDelete removeFromSuperview];
     [self setCurrentLayerFlagsAt:index To:NO];
+    
+    // Remove layer from view and from array of layers
+    [self.colorsStack addObject:layerToDelete.switchColor];
+    [layerToDelete removeFromSuperview];
     [self.layers removeObjectAtIndex:index];
     
     if (isLastLayer)
@@ -61,6 +66,7 @@
     }
     else
     {
+        // If layer in the middle of the array, move all layers to the left
         NSMutableArray* tempLayers = [[NSMutableArray alloc] init];
         for (KVMLayer* layer in self.layers)
         {
@@ -71,6 +77,8 @@
         self.currLayerIndex = index;
     }
     
+    // Current layer is the layer to the right of the deleted layer, if exists
+    // Else current layer is the layer to the left of the deleted layer
     if (self.currLayerIndex >= 0)
     {
         [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
@@ -102,6 +110,7 @@
     self.currLayerIndex++;
     if (willPan)
     {
+        // Update current layer if about to pan to different layer
         [self setCurrentLayerFlagsAt:self.currLayerIndex-1 To:NO];
         [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
     }
@@ -113,6 +122,7 @@
     self.currLayerIndex--;
     if (willPan)
     {
+        // Update current layer if about to pan to different layer
         [self setCurrentLayerFlagsAt:self.currLayerIndex+1 To:NO];
         [self setCurrentLayerFlagsAt:self.currLayerIndex To:YES];
     }
@@ -129,8 +139,9 @@
     NSMutableArray* currColumn = [[NSMutableArray alloc] init];
     for (int i = 0; i < self.layers.count; i++)
     {
-        NSMutableArray* layerColumn = [[self.layers objectAtIndex:i] getColumn:self.currColumnIndex];
-        [currColumn addObjectsFromArray:layerColumn];
+        // Accumulate all switches in current column from all layers
+        KVMLayer* currLayer = [self.layers objectAtIndex:i];
+        [currColumn addObjectsFromArray:[currLayer.switches objectAtIndex:self.currColumnIndex]];
     }
     self.currColumnIndex++;
     return currColumn;
@@ -154,6 +165,9 @@
 
 - (void)setCurrentLayerFlagsAt:(int)layerIndex To:(BOOL)isCurrLayer
 {
+    // Set flag on all switches in layer to indicate if current layer
+    // Must be set switch-wise because switches are continuously accessed by column
+    // in animation loop (with no reference to containing layer)
     KVMLayer* tempLayer = [self.layers objectAtIndex:layerIndex];
     for (NSMutableArray* tempColumn in tempLayer.switches)
     {
