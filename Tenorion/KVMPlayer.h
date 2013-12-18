@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
 #import "KVMSwitch.h"
 #import "KVMLayerManager.h"
 #import "SoundManager.h"

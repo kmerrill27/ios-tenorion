@@ -104,6 +104,20 @@
 		17CA69DD182CA4A500D85596 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CA69DC182CA4A500D85596 /* arrow.png */; };
 		17CA69E1182CBD1900D85596 /* KVMOptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */; };
 		17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */; };
+		17CC53EE1860ECB60009435C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17CC53ED1860ECB60009435C /* QuartzCore.framework */; };
+		17CC544A186116520009435C /* Tenorion Icon 29.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC543C186116520009435C /* Tenorion Icon 29.png */; };
+		17CC544B186116520009435C /* Tenorion Icon 40.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC543D186116520009435C /* Tenorion Icon 40.png */; };
+		17CC544C186116520009435C /* Tenorion Icon 50.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC543E186116520009435C /* Tenorion Icon 50.png */; };
+		17CC544D186116520009435C /* Tenorion Icon 57.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC543F186116520009435C /* Tenorion Icon 57.png */; };
+		17CC544E186116520009435C /* Tenorion Icon 58.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5440186116520009435C /* Tenorion Icon 58.png */; };
+		17CC5450186116520009435C /* Tenorion Icon 72.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5442186116520009435C /* Tenorion Icon 72.png */; };
+		17CC5451186116520009435C /* Tenorion Icon 76.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5443186116520009435C /* Tenorion Icon 76.png */; };
+		17CC5452186116520009435C /* Tenorion Icon 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5444186116520009435C /* Tenorion Icon 80.png */; };
+		17CC5453186116520009435C /* Tenorion Icon 100.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5445186116520009435C /* Tenorion Icon 100.png */; };
+		17CC5454186116520009435C /* Tenorion Icon 114.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5446186116520009435C /* Tenorion Icon 114.png */; };
+		17CC5455186116520009435C /* Tenorion Icon 120.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5447186116520009435C /* Tenorion Icon 120.png */; };
+		17CC5456186116520009435C /* Tenorion Icon 144.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5448186116520009435C /* Tenorion Icon 144.png */; };
+		17CC5457186116520009435C /* Tenorion Icon 152.png in Resources */ = {isa = PBXBuildFile; fileRef = 17CC5449186116520009435C /* Tenorion Icon 152.png */; };
 		17D0B6E3185299C700BEA0E2 /* KVMRipple.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D0B6E2185299C700BEA0E2 /* KVMRipple.m */; };
 /* End PBXBuildFile section */
 
@@ -232,6 +246,20 @@
 		17CA69DE182CBD1900D85596 /* KVMOptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMOptionsViewController.h; sourceTree = "<group>"; };
 		17CA69DF182CBD1900D85596 /* KVMOptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMOptionsViewController.m; sourceTree = "<group>"; };
 		17CA69E0182CBD1900D85596 /* KVMOptionsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KVMOptionsViewController.xib; sourceTree = "<group>"; };
+		17CC53ED1860ECB60009435C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17CC543C186116520009435C /* Tenorion Icon 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 29.png"; sourceTree = "<group>"; };
+		17CC543D186116520009435C /* Tenorion Icon 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 40.png"; sourceTree = "<group>"; };
+		17CC543E186116520009435C /* Tenorion Icon 50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 50.png"; sourceTree = "<group>"; };
+		17CC543F186116520009435C /* Tenorion Icon 57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 57.png"; sourceTree = "<group>"; };
+		17CC5440186116520009435C /* Tenorion Icon 58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 58.png"; sourceTree = "<group>"; };
+		17CC5442186116520009435C /* Tenorion Icon 72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 72.png"; sourceTree = "<group>"; };
+		17CC5443186116520009435C /* Tenorion Icon 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 76.png"; sourceTree = "<group>"; };
+		17CC5444186116520009435C /* Tenorion Icon 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 80.png"; sourceTree = "<group>"; };
+		17CC5445186116520009435C /* Tenorion Icon 100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 100.png"; sourceTree = "<group>"; };
+		17CC5446186116520009435C /* Tenorion Icon 114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 114.png"; sourceTree = "<group>"; };
+		17CC5447186116520009435C /* Tenorion Icon 120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 120.png"; sourceTree = "<group>"; };
+		17CC5448186116520009435C /* Tenorion Icon 144.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 144.png"; sourceTree = "<group>"; };
+		17CC5449186116520009435C /* Tenorion Icon 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tenorion Icon 152.png"; sourceTree = "<group>"; };
 		17D0B6E1185299C700BEA0E2 /* KVMRipple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KVMRipple.h; sourceTree = "<group>"; };
 		17D0B6E2185299C700BEA0E2 /* KVMRipple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KVMRipple.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -241,6 +269,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CC53EE1860ECB60009435C /* QuartzCore.framework in Frameworks */,
 				17A2FC2618309140008515F1 /* AVFoundation.framework in Frameworks */,
 				17B4498818260E4E002D31C6 /* CoreGraphics.framework in Frameworks */,
 				17B4498A18260E4E002D31C6 /* UIKit.framework in Frameworks */,
@@ -374,6 +403,7 @@
 		17A2FC2318308DD6008515F1 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				17CC5458186116B70009435C /* icons */,
 				1773ED0D182DA86F009847EA /* bass.png */,
 				1773ED0B182DA858009847EA /* treble.png */,
 				1773ED03182DA248009847EA /* drum.png */,
@@ -417,6 +447,7 @@
 		17B4498418260E4E002D31C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				17CC53ED1860ECB60009435C /* QuartzCore.framework */,
 				17A2FC2518309140008515F1 /* AVFoundation.framework */,
 				178341BC182AE33000ADF751 /* AudioToolbox.framework */,
 				17B4498518260E4E002D31C6 /* Foundation.framework */,
@@ -485,6 +516,26 @@
 				17B449A718260E4E002D31C6 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		17CC5458186116B70009435C /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				17CC543C186116520009435C /* Tenorion Icon 29.png */,
+				17CC543D186116520009435C /* Tenorion Icon 40.png */,
+				17CC543E186116520009435C /* Tenorion Icon 50.png */,
+				17CC543F186116520009435C /* Tenorion Icon 57.png */,
+				17CC5440186116520009435C /* Tenorion Icon 58.png */,
+				17CC5442186116520009435C /* Tenorion Icon 72.png */,
+				17CC5443186116520009435C /* Tenorion Icon 76.png */,
+				17CC5444186116520009435C /* Tenorion Icon 80.png */,
+				17CC5445186116520009435C /* Tenorion Icon 100.png */,
+				17CC5446186116520009435C /* Tenorion Icon 114.png */,
+				17CC5447186116520009435C /* Tenorion Icon 120.png */,
+				17CC5448186116520009435C /* Tenorion Icon 144.png */,
+				17CC5449186116520009435C /* Tenorion Icon 152.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,6 +617,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CC5456186116520009435C /* Tenorion Icon 144.png in Resources */,
 				178419CE184FC44C00AF177B /* ab2guitar.wav in Resources */,
 				1773ED08182DA248009847EA /* guitar.png in Resources */,
 				17188EBE184E9A0000F444C2 /* g4.wav in Resources */,
@@ -578,10 +630,13 @@
 				178419DF184FC47C00AF177B /* a3guitar.wav in Resources */,
 				17188EE9184ED0FD00F444C2 /* ab2.wav in Resources */,
 				178419E0184FC47C00AF177B /* b3guitar.wav in Resources */,
+				17CC5451186116520009435C /* Tenorion Icon 76.png in Resources */,
 				178419EE184FC49900AF177B /* b1guitar.wav in Resources */,
+				17CC5452186116520009435C /* Tenorion Icon 80.png in Resources */,
 				17188ED9184EAB5200F444C2 /* b2.wav in Resources */,
 				17188EF2184ED10D00F444C2 /* f#3.wav in Resources */,
 				17188EF0184ED10D00F444C2 /* d3.wav in Resources */,
+				17CC5453186116520009435C /* Tenorion Icon 100.png in Resources */,
 				178419CF184FC44C00AF177B /* bb2guitar.wav in Resources */,
 				17188F08184ED7DF00F444C2 /* kick.wav in Resources */,
 				178419D4184FC46700AF177B /* ab3guitar.wav in Resources */,
@@ -590,11 +645,14 @@
 				17188EE5184ED0E900F444C2 /* eb4.wav in Resources */,
 				17188EF9184ED12A00F444C2 /* e5.wav in Resources */,
 				17188EC8184E9B0100F444C2 /* c4.wav in Resources */,
+				17CC544D186116520009435C /* Tenorion Icon 57.png in Resources */,
 				17B4499018260E4E002D31C6 /* InfoPlist.strings in Resources */,
+				17CC544B186116520009435C /* Tenorion Icon 40.png in Resources */,
 				17188EFA184ED12A00F444C2 /* f#5.wav in Resources */,
 				178419FD184FC5CA00AF177B /* f2guitar.wav in Resources */,
 				178419D6184FC46700AF177B /* eb2guitar.wav in Resources */,
 				178419FC184FC5CA00AF177B /* e2guitar.wav in Resources */,
+				17CC5457186116520009435C /* Tenorion Icon 152.png in Resources */,
 				178419E6184FC47C00AF177B /* g3guitar.wav in Resources */,
 				17CA69DD182CA4A500D85596 /* arrow.png in Resources */,
 				17188EC9184E9B0100F444C2 /* c5.wav in Resources */,
@@ -602,15 +660,18 @@
 				17188EC6184E9B0100F444C2 /* a4.wav in Resources */,
 				17188F06184ED7DF00F444C2 /* cymhigh.wav in Resources */,
 				17188EEA184ED0FD00F444C2 /* bb2.wav in Resources */,
+				17CC5454186116520009435C /* Tenorion Icon 114.png in Resources */,
 				178419F1184FC49900AF177B /* f#2guitar.wav in Resources */,
 				178419FE184FC5CA00AF177B /* g2guitar.wav in Resources */,
 				17CA69E2182CBD1900D85596 /* KVMOptionsViewController.xib in Resources */,
 				1773ED0A182DA248009847EA /* piano.png in Resources */,
 				178419EF184FC49900AF177B /* c1guitar.wav in Resources */,
+				17CC544A186116520009435C /* Tenorion Icon 29.png in Resources */,
 				17188EDD184EAB5200F444C2 /* e2.wav in Resources */,
 				178419E5184FC47C00AF177B /* f3guitar.wav in Resources */,
 				178419E4184FC47C00AF177B /* e3guitar.wav in Resources */,
 				17188F09184ED7DF00F444C2 /* rim.wav in Resources */,
+				17CC544C186116520009435C /* Tenorion Icon 50.png in Resources */,
 				1773ED0E182DA86F009847EA /* bass.png in Resources */,
 				178419ED184FC49900AF177B /* a1guitar.wav in Resources */,
 				17188EF3184ED10D00F444C2 /* g3.wav in Resources */,
@@ -626,6 +687,7 @@
 				17188EFB184ED12A00F444C2 /* g5.wav in Resources */,
 				17188F0B184ED7DF00F444C2 /* stick.wav in Resources */,
 				178419FB184FC5CA00AF177B /* b2guitar.wav in Resources */,
+				17CC5450186116520009435C /* Tenorion Icon 72.png in Resources */,
 				178419F4184FC4A800AF177B /* f#3guitar.wav in Resources */,
 				17188F0D184ED7DF00F444C2 /* tommed.wav in Resources */,
 				178419E2184FC47C00AF177B /* c3guitar.wav in Resources */,
@@ -633,10 +695,12 @@
 				17188F0C184ED7DF00F444C2 /* tomhi.wav in Resources */,
 				178419D5184FC46700AF177B /* bb3guitar.wav in Resources */,
 				17188EF1184ED10D00F444C2 /* e3.wav in Resources */,
+				17CC5455186116520009435C /* Tenorion Icon 120.png in Resources */,
 				17B4499818260E4E002D31C6 /* Images.xcassets in Resources */,
 				17188EE4184ED0E900F444C2 /* bb4.wav in Resources */,
 				1773ED07182DA248009847EA /* drum.png in Resources */,
 				17188EDC184EAB5200F444C2 /* d2.wav in Resources */,
+				17CC544E186116520009435C /* Tenorion Icon 58.png in Resources */,
 				17188EF8184ED12A00F444C2 /* d5.wav in Resources */,
 				17188ED8184EAB5200F444C2 /* a2.wav in Resources */,
 				17188EDF184EAB5200F444C2 /* g2.wav in Resources */,

@@ -22,7 +22,6 @@
 
 - (id)initWithFrame:(CGRect)frame WithTone:(NSString *)toneFile AndColor:(UIColor *)color;
 - (void)toggle;
-- (void)playOn:(UIView *)view;
-- (void)highlight;
+- (void)playOn:(UIView *)view WithSoundManager:(SoundManager *)soundManager;
 
 @end

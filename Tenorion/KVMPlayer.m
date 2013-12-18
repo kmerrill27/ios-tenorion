@@ -24,12 +24,10 @@
 
 - (void)startPlayback
 {
-    [UIView animateWithDuration:0 animations:^{
+    [UIView animateWithDuration:0 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         [self playSwitchBoard];
-    } completion:^(BOOL finished){
-        [UIView animateWithDuration:0 animations:^{
-            [self performSelector:@selector(startPlayback) withObject:nil afterDelay:2.38];
-        }];
+    }  completion:^(BOOL finished){
+        [self performSelector:@selector(startPlayback) withObject:nil afterDelay:3];
     }];
 }
 
@@ -48,19 +46,8 @@
 {
     for (KVMSwitch* currSwitch in switchColumn)
     {
-        if (currSwitch.isOn)
-        {
-            if (currSwitch.currLayerFlag)
-            {
-                UIViewController* targetController = self.layerManager.target;
-                [currSwitch playOn:targetController.view];
-            }
-            [self.soundManager playSound:currSwitch.toneFile WithVolume:currSwitch.volume];
-        }
-        else
-        {
-            [currSwitch highlight];
-        }
+        UIViewController* targetController = self.layerManager.target;
+        [currSwitch playOn:targetController.view WithSoundManager:self.soundManager];
     }
 }
 

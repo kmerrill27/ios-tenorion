@@ -25,7 +25,7 @@
 
 - (void)setup
 {
-    self.layerColors = [[NSMutableArray alloc] initWithObjects:[UIColor cyanColor],[UIColor yellowColor], [UIColor magentaColor], [UIColor whiteColor], nil];
+    self.layerColors = [[NSMutableArray alloc] initWithObjects:[UIColor colorWithRed:0 green:238.0/255.0 blue:118.0/255.0 alpha:1], [UIColor whiteColor], [UIColor blueColor], [UIColor colorWithRed:238.0/255.0 green:48.0/255.0 blue:167.0/255.0 alpha:1], nil];
     self.layerManager = [[KVMLayerManager alloc] initWithColumns:8 AndColors:self.layerColors AndTarget:self];
     self.player = [[KVMPlayer alloc] initWithLayerManager:self.layerManager];
 }

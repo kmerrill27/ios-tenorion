@@ -38,24 +38,43 @@
     {
         self.backgroundColor = self.onColor;
     }
-    else {
+    else
+    {
         self.backgroundColor = self.offColor;
     }
 }
 
-- (void)playOn:(UIView *)view
+- (void)playOn:(UIView *)view WithSoundManager:(SoundManager *)soundManager
 {
-    int originalSize = self.bounds.size.width;
-    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-        [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
-    } completion:^(BOOL finished){
-        [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
-        } completion:nil];
-    }];
-   
-    CGPoint center = [self.superview convertPoint:self.center toView:view];
-    [self rippleOnView:view WithCenter:center AndSize:originalSize];
+    if (self.isOn)
+    {
+        int originalSize = self.bounds.size.width;
+        CGPoint center = [self.superview convertPoint:self.center toView:view];
+        
+        if (self.currLayerFlag)
+        {
+            [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
+            [self rippleOnView:view WithCenter:center AndSize:originalSize];
+            [soundManager playSound:self.toneFile WithVolume:self.volume];
+            
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
+            } completion:nil];
+        }
+        else
+        {
+            [self setBounds:CGRectMake(0, 0, originalSize+0.75, originalSize+0.75)];
+            [soundManager playSound:self.toneFile WithVolume:self.volume];
+            
+            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+                [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
+            } completion:nil];
+        }
+    }
+    else
+    {
+        [self highlight];
+    }
 }
 
 - (void)highlight
@@ -63,32 +82,26 @@
     [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         self.backgroundColor = [self.offColor colorWithAlphaComponent:0.5];
     } completion:^(BOOL finished){
-        [UIView animateWithDuration:0.4 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            if (self.isOn)
-            {
-                self.backgroundColor = self.onColor;
-            }
-            else
-            {
-                self.backgroundColor = self.offColor;
-            }
+        [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            self.backgroundColor = self.isOn ? self.onColor : self.offColor;
         } completion:nil];
     }];
 }
 
 -(void)rippleOnView:(UIView *)view WithCenter:(CGPoint)center AndSize:(int)size
 {
-    if (self.isOn && self.currLayerFlag && size < 300)
-    {
-        [UIView animateWithDuration:0.06 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-            self.ripple = [[KVMRipple alloc] initWithFrame:view.frame AtCenterX:center.x AndY:center.y WithSize:size AndColor:self.onColor];
+    [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+        self.ripple = [[KVMRipple alloc] initWithFrame:view.frame AtCenterX:center.x AndY:center.y WithSize:size+5 AndColor:self.onColor];
+        [view addSubview:self.ripple];
+    } completion:^(BOOL finished){
+        [self.ripple removeFromSuperview];
+        [UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            self.ripple = [[KVMRipple alloc] initWithFrame:view.frame AtCenterX:center.x AndY:center.y WithSize:size+10 AndColor:self.onColor];
             [view addSubview:self.ripple];
         } completion:^(BOOL finished){
-            int newSize = self.ripple.size + 30;
             [self.ripple removeFromSuperview];
-            [self rippleOnView:view WithCenter:center AndSize:newSize];
         }];
-    }
+    }];
 }
 
 @end

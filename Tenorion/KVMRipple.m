@@ -29,7 +29,7 @@
 - (void)drawRect:(CGRect)rect
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetLineWidth(context, 10.0);
+    CGContextSetLineWidth(context, 5.0);
     CGContextSetStrokeColorWithColor(context, self.color.CGColor);
     CGRect rectangle = CGRectMake(self.x-self.size/2, self.y-self.size/2, self.size, self.size);
     CGContextAddEllipseInRect(context, rectangle);
