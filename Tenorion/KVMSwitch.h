@@ -13,7 +13,6 @@
 @interface KVMSwitch : UIButton
 
 @property BOOL isOn;
-@property BOOL currLayerFlag;
 @property float volume;
 @property KVMRipple* ripple;
 @property (strong, nonatomic) NSString* toneFile;
@@ -23,5 +22,6 @@
 - (id)initWithFrame:(CGRect)frame WithTone:(NSString *)toneFile AndColor:(UIColor *)color;
 - (void)toggle;
 - (void)playOn:(UIView *)view WithSoundManager:(SoundManager *)soundManager;
+- (void)playCurrLayerOn:(UIView *)view WithSoundManager:(SoundManager *)soundManager;
 
 @end

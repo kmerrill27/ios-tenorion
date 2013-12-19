@@ -26,7 +26,6 @@
 {
     self.offColor = [self.onColor colorWithAlphaComponent:0.3];
     self.isOn = NO;
-    self.currLayerFlag = YES;
     self.backgroundColor = self.offColor;
     self.layer.cornerRadius = self.bounds.size.width / 2.0;
 }
@@ -49,29 +48,32 @@
     if (self.isOn)
     {
         int originalSize = self.bounds.size.width;
+        
+        // If switch is part of background layer, grow less and don't ripple
+        [self setBounds:CGRectMake(0, 0, originalSize+0.75, originalSize+0.75)];
+        [soundManager playSound:self.toneFile WithVolume:self.volume];
+        
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
+        } completion:nil];
+    }
+}
+
+- (void)playCurrLayerOn:(UIView *)view WithSoundManager:(SoundManager *)soundManager
+{
+    if (self.isOn)
+    {
+        int originalSize = self.bounds.size.width;
         CGPoint center = [self.superview convertPoint:self.center toView:view];
         
-        if (self.currLayerFlag)
-        {
-            // If switch is on current layer, grow and ripple
-            [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
-            [self rippleOnView:view WithCenter:center AndSize:originalSize];
-            [soundManager playSound:self.toneFile WithVolume:self.volume];
-            
-            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
-            } completion:nil];
-        }
-        else
-        {
-            // If switch is part of background layer, grow less and don't ripple
-            [self setBounds:CGRectMake(0, 0, originalSize+0.75, originalSize+0.75)];
-            [soundManager playSound:self.toneFile WithVolume:self.volume];
-            
-            [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
-                [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
-            } completion:nil];
-        }
+        // If switch is on current layer, grow and ripple
+        [self setBounds:CGRectMake(0, 0, originalSize+1.5, originalSize+1.5)];
+        [self rippleOnView:view WithCenter:center AndSize:originalSize];
+        [soundManager playSound:self.toneFile WithVolume:self.volume];
+        
+        [UIView animateWithDuration:0.2 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
+            [self setBounds:CGRectMake(0, 0, originalSize, originalSize)];
+        } completion:nil];
     }
     else
     {

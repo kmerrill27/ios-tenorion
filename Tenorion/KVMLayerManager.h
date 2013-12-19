@@ -13,7 +13,6 @@
 
 @property id target;
 @property int currLayerIndex;
-@property int currColumnIndex;
 @property int layerSize;
 @property int maxLayers;
 @property (strong, nonatomic) NSMutableArray* colorsStack;
@@ -23,13 +22,12 @@
 - (BOOL)canAddLayer;
 - (BOOL)hasNextLayer;
 - (BOOL)hasPreviousLayer;
-- (BOOL)hasNextColumn;
-- (void)resetColumns;
 - (void)deleteLayerAtIndex:(int)index IsLastLayer:(BOOL)isLastLayer;
 - (KVMLayer *)addLayer;
 - (KVMLayer *)getNextLayerToPan:(BOOL)willPan;
 - (KVMLayer *)getPreviousLayerToPan:(BOOL)willPan;
 - (KVMLayer *)getCurrentLayer;
-- (NSMutableArray *)getNextColumn;
+- (NSMutableArray *)getColumnOfCurrentLayer:(int)index;
+- (NSMutableArray *)getColumn:(int)index;
 
 @end

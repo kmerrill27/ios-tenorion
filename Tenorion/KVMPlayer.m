@@ -34,23 +34,28 @@
 
 - (void)playSwitchBoard
 {
-    int i = 0;
-    while ([self.layerManager hasNextColumn])
+    for (int i = 0; i < self.layerManager.layerSize; i++)
     {
-        [self performSelector:@selector(playSwitchColumn:) withObject:[self.layerManager getNextColumn] afterDelay:0.3*i];
-        i++;
+        NSNumber* nsi = [NSNumber numberWithInteger:i];
+        [self performSelector:@selector(playSwitchColumn:) withObject:nsi afterDelay:0.3*i];
     }
-    
-    // Set state back to first column for next playback
-    [self.layerManager resetColumns];
 }
 
-- (void)playSwitchColumn:(NSMutableArray *)switchColumn
+- (void)playSwitchColumn:(NSNumber *)index
 {
-    // Play all switches on all layers in current column
+    NSMutableArray* currLayerSwitchColumn = [self.layerManager getColumnOfCurrentLayer:[index intValue]];
+    NSMutableArray* switchColumn = [self.layerManager getColumn:[index intValue]];
+    UIViewController* targetController = self.layerManager.target;
+    
+    // Play all switches on current layer in current column
+    for (KVMSwitch* currSwitch in currLayerSwitchColumn)
+    {
+        [currSwitch playCurrLayerOn:targetController.view WithSoundManager:self.soundManager];
+    }
+    
+    // Play all switches on all other layers in current column
     for (KVMSwitch* currSwitch in switchColumn)
     {
-        UIViewController* targetController = self.layerManager.target;
         [currSwitch playOn:targetController.view WithSoundManager:self.soundManager];
     }
 }
