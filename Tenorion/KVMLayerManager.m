@@ -86,13 +86,13 @@
     return self.currLayerIndex > 0;
 }
 
-- (KVMLayer *)getNextLayerToPan:(BOOL)willPan
+- (KVMLayer *)getNextLayer
 {
     self.currLayerIndex++;
     return [self.layers objectAtIndex:self.currLayerIndex];
 }
 
-- (KVMLayer *)getPreviousLayerToPan:(BOOL)willPan
+- (KVMLayer *)getPreviousLayer
 {
     self.currLayerIndex--;
     return [self.layers objectAtIndex:self.currLayerIndex];

@@ -24,8 +24,8 @@
 - (BOOL)hasPreviousLayer;
 - (void)deleteLayerAtIndex:(int)index IsLastLayer:(BOOL)isLastLayer;
 - (KVMLayer *)addLayer;
-- (KVMLayer *)getNextLayerToPan:(BOOL)willPan;
-- (KVMLayer *)getPreviousLayerToPan:(BOOL)willPan;
+- (KVMLayer *)getNextLayer;
+- (KVMLayer *)getPreviousLayer;
 - (KVMLayer *)getCurrentLayer;
 - (NSMutableArray *)getColumnOfCurrentLayer:(int)index;
 - (NSMutableArray *)getColumn:(int)index;

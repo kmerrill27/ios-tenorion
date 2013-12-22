@@ -83,7 +83,7 @@
 
 - (void)goToPreviousLayer
 {
-    KVMLayer* previousLayer = [self.layerManager getPreviousLayerToPan:YES];
+    KVMLayer* previousLayer = [self.layerManager getPreviousLayer];
     [self.switchBoardView bringSubviewToFront:previousLayer];
     
     [self tintElements:previousLayer.switchColor];
@@ -93,7 +93,7 @@
 
 - (void)goToNextLayer
 {
-    KVMLayer* nextLayer = [self.layerManager getNextLayerToPan:YES];
+    KVMLayer* nextLayer = [self.layerManager getNextLayer];
     [self.switchBoardView bringSubviewToFront:nextLayer];
     
     [self tintElements:nextLayer.switchColor];
